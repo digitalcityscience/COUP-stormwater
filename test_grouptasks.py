@@ -2,25 +2,27 @@ import time
 
 from celery import group
 
-from tasks import process_something
+from models import ComplexTask
+from tasks import compute_complex_task
 
-task_group = group([
-    process_something.s(4, 4),
-    process_something.s(8, 8),
-    process_something.s(16, 16),
-    process_something.s(32, 32),
-])
+if __name__ == '__main__':
 
-group_result = task_group.apply_async()
+    # Generate TestData
+    tasks = [ComplexTask(param_a=i, param_b=i) for i in range(20)]
+    task_group = group([compute_complex_task.s(taskParam.param_a, taskParam.param_b) for taskParam in tasks])
 
-results_ready = False
-while not results_ready:
-    results_ready = group_result.ready()
+    group_result = task_group.apply_async()
 
-    print("Results ready:", group_result.completed_count())
-    for result in group_result.results:
-        print(result.ready())
-    time.sleep(1)
+    # Wait for result via polling.
+    results_ready = False
+    while not results_ready:
+        results_ready = group_result.ready()
 
-    if results_ready:
-        print(group_result.get())
+        print("Results ready:", group_result.completed_count())
+        for result in group_result.results:
+            print(result.state)
+            print(result.ready())
+        time.sleep(1)
+
+        if results_ready:
+            print(group_result.get())

@@ -9,7 +9,7 @@ logger = get_task_logger(__name__)
 
 
 @app.task()
-def process_something(x, y):
+def compute_complex_task(x, y):
     duration = randint(3, 10)
     logger.info('Adds {0} + {1}. Duration {2}'.format(x, y, duration))
     time.sleep(duration)
