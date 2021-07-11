@@ -1,4 +1,4 @@
-version: "3.9"  # optional since v1.27.0
+version: "3.9"
 services:
   redis:
     image: redis:latest
@@ -8,3 +8,24 @@ services:
     command: redis-server --requirepass G0rDkQtRcl!E --appendonly yes
     volumes:
       - "./redis/data:/app"
+
+  api:
+    build:
+      context: .
+    ports:
+      - 5000:5000
+    restart: "always"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASS=G0rDkQtRcl!E
+
+  worker:
+    build:
+      context: .
+    restart: "always"
+    command: celery -A tasks worker --loglevel=info
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASS=G0rDkQtRcl!E
