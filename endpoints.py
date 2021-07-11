@@ -60,6 +60,7 @@ def get_grouptask(grouptask_id: str):
         'tasksTotal': len(group_result.results),
         'grouptaskReady': group_result.ready(),
         'grouptaskSucceeded': group_result.successful(),
+        'results': [result.get() for result in group_result.results if result.ready()]
     }
     if group_result.ready():
         response['result'] = group_result.get()
