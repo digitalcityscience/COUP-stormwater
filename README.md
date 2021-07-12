@@ -1,12 +1,27 @@
 # Celery Example
 
 ## Description
-This sample project shows how to use Celery to process task batches asynchronously. Using Celery, this tech stack offers high scalability. For ease of installation, Redis is used here. Through Redis the tasks are distributed to the workers and also the results are stored on Redis.
+This sample project shows how to use Celery to process task batches asynchronously. 
+For simplicity, the sum of two integers are computed here. In order to simulate the 
+complexity, a random duration (3-10 seconds are put on the processing).
+Using Celery, this tech stack offers high scalability. For ease of installation, 
+Redis is used here. Through Redis the tasks are distributed to the workers and also 
+the results are stored on Redis.
 
-Wrapped with an API (Flask), the stack provides an interface for other services. The whole thing is then deployed with Docker.
+Wrapped with an API (Flask), the stack provides an interface for other services. 
+The whole thing is then deployed with Docker.
 
 ## Design
-The task batches are commissioned via a endpoint (```POST, /grouptasks```) (see Usage). The client receives a response with a Group-Task-Id and a list of TaskIds. Using polling, the client can query the status of the GroupTask (```GET, /grouptasks/<grouptask_id>```) or the status of a Task (```GET, /tasks/<task_id>```).
+The task batches are commissioned via a endpoint (```POST, /grouptasks```) (see Usage). 
+The client receives a response with a Group-Task-Id and a list of TaskIds. 
+Using polling, the client can query the status of the GroupTask 
+(```GET, /grouptasks/<grouptask_id>```) or the status of a Task 
+(```GET, /tasks/<task_id>```).
+
+## Caching
+After a task has been successfully processed, the result is cached on Redis along with 
+the input parameters. The result is then returned when a (different) task has the same 
+input parameters and is requested.
 
 ## TechStack
 - Python
@@ -47,6 +62,11 @@ Request:
 ```
 curl -X GET http://localhost:5000/grouptasks/858c8724-03c4-4027-b1e9-4185545aa54d
 ```
+
+**Hint**: This request can be used for polling. The poll abort condition can be set to "groupTaskProcessed != True". 
+While processing the results of processed tasks are published in "results" and can be used to display the progress.
+
+
 Response:
 ```json
 {
