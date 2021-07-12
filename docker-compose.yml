@@ -7,7 +7,7 @@ services:
     restart: "always"
     command: redis-server --requirepass G0rDkQtRcl!E --appendonly yes
     volumes:
-      - "./redis/data:/app"
+      - "./redis/data:/data"
 
   api:
     build:
