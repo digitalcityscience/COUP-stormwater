@@ -37,7 +37,7 @@ def process_grouptask():
         complex_tasks = [ComplexTask.from_json(json=ct) for ct in request.json['tasks']]
         group_result = services.compute(complex_tasks=complex_tasks)
         result_ids = [result.id for result in group_result.results]
-        response = {'groupTaskId': group_result.id, 'taskIds': result_ids}
+        response = {'grouptaskId': group_result.id, 'taskIds': result_ids}
 
         # return jsonify(response), HTTPStatus.OK
         return make_response(

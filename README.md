@@ -47,7 +47,7 @@ curl -X POST http://localhost:5000/grouptasks -H 'Content-type: application/json
 Response:
 ```json
 {
-    "groupTaskId" : "858c8724-03c4-4027-b1e9-4185545aa54d",
+    "grouptaskId" : "858c8724-03c4-4027-b1e9-4185545aa54d",
     "taskIds" : [
         "55de4727-c7ad-4c5d-9c72-242a6558d65a",
         "12ae3364-f69b-41b9-ad82-c1b8a3e077b8",
@@ -70,9 +70,9 @@ While processing the results of processed tasks are published in "results" and c
 Response:
 ```json
 {
-    "groupTaskId" : "858c8724-03c4-4027-b1e9-4185545aa54d",
+    "grouptaskId" : "858c8724-03c4-4027-b1e9-4185545aa54d",
     "grouptaskProcessed" : false,
-    "grouptaskSucceeded" : true,
+    "grouptaskSucceeded" : false,
     "results": [
       6,
       19,
@@ -85,7 +85,7 @@ Response:
 ### Get single Task-Result
 Request:
 ```
-curl -X GET http://localhost:5000/grouptasks/858c8724-03c4-4027-b1e9-4185545aa54d
+curl -X GET http://localhost:5000/tasks/55de4727-c7ad-4c5d-9c72-242a6558d65a
 ```
 Response:
 ```json
