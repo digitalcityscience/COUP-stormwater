@@ -6,24 +6,41 @@ from celery.utils.log import get_task_logger
 
 from cache import Cache
 from mycelery import app
+from swimdock.main import perform_swmm_analysis
 
 logger = get_task_logger(__name__)
 cache = Cache()
 
+sample = {
+    "calculation_method": "normal",
+    "hash": "yxz123",
+    "model_updates": [
+        {
+            "outlet_id": "J_out19",
+            "subcatchment_id": "Sub000"
+        }
+    ],
+    "rain_event": {
+        "duration": 120,
+        "return_period": 10
+    }
+}
+
 
 @app.task()
-def compute_complex_task(x, y) -> dict:
+def compute_complex_task(complex_task: dict) -> dict:
     # Check cache. If cached, return result from cache.
-    key = str(hash((x, y)))
+    key = complex_task['hash']
+
     result = cache.retrieve(key=key)
     if not result == {}:
         return result
 
     # Start computing
-    duration = randint(3, 10)
-    logger.info('Adds {0} + {1}. Duration {2}'.format(x, y, duration))
-    time.sleep(duration)
-    result = x + y
+    # duration = randint(3, 10)
+    logger.info('Compute {0}'.format(key))
+    # time.sleep(duration)
+    result = perform_swmm_analysis(complex_task)
 
     return {"sum": result}
 
@@ -36,5 +53,5 @@ def task_postrun_handler(task_id, task, *args, **kwargs):
 
     # Cache only succeeded tasks
     if state == "SUCCESS":
-        key = str(hash(tuple(args)))
+        key = args[0]['hash']
         cache.save(key=key, value=result)

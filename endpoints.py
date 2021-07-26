@@ -4,7 +4,6 @@ from celery.result import AsyncResult, GroupResult
 from flask import Flask, request, abort, make_response, jsonify
 
 import services
-from models import ComplexTask
 from mycelery import app as celery_app
 
 app = Flask(__name__)
@@ -34,7 +33,7 @@ def process_grouptask():
 
     # Parse requests
     try:
-        complex_tasks = [ComplexTask.from_json(json=ct) for ct in request.json['tasks']]
+        complex_tasks = request.json['tasks']
         group_result = services.compute(complex_tasks=complex_tasks)
         result_ids = [result.id for result in group_result.results]
         response = {'grouptaskId': group_result.id, 'taskIds': result_ids}

@@ -11,10 +11,20 @@ headers = {
 data = json.dumps(
     {
         "tasks": [
-            {"paramB": 7, "paramA": 1},
-            {"paramB": 11, "paramA": 9},
-            {"paramB": 10, "paramA": 12},
-            {"paramB": 3, "paramA": 8}
+            {
+                "calculation_method": "normal",
+                "hash": "yxssz123",
+                "model_updates": [
+                    {
+                        "outlet_id": "J_out19",
+                        "subcatchment_id": "Sub000"
+                    }
+                ],
+                "rain_event": {
+                    "duration": 120,
+                    "return_period": 10
+                }
+            }
         ]
     }
 )
@@ -28,7 +38,7 @@ results_completed = False
 
 while not results_completed:
     response = requests.get('http://localhost:5000/grouptasks/{}'.format(grouptask_id)).json()
-    pprint(response)
+    # pprint(response)
     results_completed = response['grouptaskProcessed']
     time.sleep(1)
 

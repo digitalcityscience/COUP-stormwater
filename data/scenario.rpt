@@ -1,0 +1,1658 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.1.13)
+  --------------------------------------------------------------
+
+  Grasbrook 
+  
+  
+  *************
+  Element Count
+  *************
+  Number of rain gages ...... 5
+  Number of subcatchments ... 467
+  Number of nodes ........... 61
+  Number of links ........... 60
+  Number of pollutants ...... 0
+  Number of land uses ....... 0
+  
+  
+  ****************
+  Raingage Summary
+  ****************
+                                                      Data       Recording
+  Name                 Data Source                    Type       Interval 
+  ------------------------------------------------------------------------
+  RainGage_2           ./data/rain_data/timeseries_2.txt
+  RainGage_5           ./data/rain_data/timeseries_5.txt
+  RainGage_10          ./data/rain_data/timeseries_10.txt
+  RainGage_50          ./data/rain_data/timeseries_50.txt
+  RainGage_100         ./data/rain_data/timeseries_100.txt
+  
+  
+  ********************
+  Subcatchment Summary
+  ********************
+  Name                       Area     Width   %Imperv    %Slope Rain Gage            Outlet              
+  -----------------------------------------------------------------------------------------------------------
+  Sub000                     0.06     18.90    100.00    2.0000 RainGage_10          J_out19             
+  Sub001                     0.07     21.80    100.00    2.0000 RainGage_10          J_out18             
+  Sub002                     0.26    132.30    100.00    1.5000 RainGage_10          J_out09             
+  Sub003                     0.04     27.20     80.00    2.0000 RainGage_10          J_out09             
+  Sub004                     0.17     57.50      0.00    2.0000 RainGage_10          J027                
+  Sub005                     0.30    755.00    100.00    1.5000 RainGage_10          J004                
+  Sub006                     0.23    117.00    100.00    1.5000 RainGage_10          J_out07             
+  Sub007                     0.07    183.30    100.00    1.5000 RainGage_10          J027                
+  Sub008                     0.13    426.30    100.00    2.5000 RainGage_10          J028                
+  Sub009                     0.10     32.60      0.00    2.0000 RainGage_10          J026                
+  Sub010                     0.26    657.30    100.00    1.5000 RainGage_10          J022                
+  Sub011                     0.05     15.40      0.00    2.0000 RainGage_10          J028                
+  Sub012                     0.12     39.70      0.00    2.0000 RainGage_10          J029                
+  Sub013                     0.39    100.90    100.00    2.0000 RainGage_10          J005                
+  Sub014                     0.40    991.50    100.00    1.5000 RainGage_10          Sub021              
+  Sub015                     0.19     62.90      0.00    2.0000 RainGage_10          J_out09             
+  Sub016                     0.05     25.40    100.00    1.5000 RainGage_10          J_out08             
+  Sub017                     0.33    110.70      0.00    2.0000 RainGage_10          JA_out28            
+  Sub018                     0.09    297.30    100.00    2.5000 RainGage_10          J_out15             
+  Sub019                     0.56    186.00      0.00    2.0000 RainGage_10          Sub377              
+  Sub020                     0.21     69.40      0.00    2.0000 RainGage_10          Sub015              
+  Sub021                     0.55    183.50      0.00    2.0000 RainGage_10          Sub019              
+  Sub022                     0.14    346.00    100.00    1.5000 RainGage_10          Sub015              
+  Sub023                     0.08    211.30    100.00    1.5000 RainGage_10          Sub019              
+  Sub024                     0.03     80.30    100.00    1.5000 RainGage_10          Sub021              
+  Sub025                     0.17    417.00    100.00    1.5000 RainGage_10          Sub021              
+  Sub026                     0.05    119.30    100.00    1.5000 RainGage_10          Sub021              
+  Sub027                     0.14    352.00    100.00    1.5000 RainGage_10          Sub019              
+  Sub028                     0.19    629.30    100.00    2.5000 RainGage_10          J020                
+  Sub029                     0.03     20.00     80.00    2.0000 RainGage_10          J021                
+  Sub030                     0.05     30.40     80.00    2.0000 RainGage_10          J022                
+  Sub031                     0.13     43.60      0.00    2.0000 RainGage_10          J020                
+  Sub032                     0.06    201.70    100.00    2.5000 RainGage_10          J020                
+  Sub033                     0.21    532.80    100.00    1.5000 RainGage_10          J024                
+  Sub034                     0.02      6.70      0.00    2.0000 RainGage_10          J025                
+  Sub035                     0.03     10.00      0.00    2.0000 RainGage_10          J025                
+  Sub036                     0.14     45.80      0.00    2.0000 RainGage_10          Sub070              
+  Sub037                     0.03     10.70      0.00    2.0000 RainGage_10          J026                
+  Sub038                     0.01      5.00      0.00    2.0000 RainGage_10          J026                
+  Sub039                     0.07     24.80      0.00    2.0000 RainGage_10          J025                
+  Sub040                     0.03     13.30    100.00    1.5000 RainGage_10          J025                
+  Sub041                     0.03     15.00    100.00    1.5000 RainGage_10          J026                
+  Sub042                     0.07     49.50    100.00    2.0000 RainGage_10          J025                
+  Sub043                     0.09     28.70      0.00    2.0000 RainGage_10          J_out22             
+  Sub044                     0.00      1.20      0.00    2.0000 RainGage_10          J_out22             
+  Sub045                     0.00      0.80      0.00    2.0000 RainGage_10          J_out22             
+  Sub046                     0.01      3.70      0.00    2.0000 RainGage_10          JA_out27            
+  Sub047                     0.13     63.70    100.00    1.5000 RainGage_10          J_out25             
+  Sub048                     0.06     28.30    100.00    1.5000 RainGage_10          J023                
+  Sub049                     0.26     85.30      0.00    2.0000 RainGage_10          JA_out27            
+  Sub050                     0.07    167.80    100.00    1.5000 RainGage_10          J_out23             
+  Sub051                     0.02     58.00    100.00    1.5000 RainGage_10          J_out23             
+  Sub052                     0.14    343.50    100.00    1.5000 RainGage_10          J023                
+  Sub053                     0.19    470.30    100.00    1.5000 RainGage_10          J025                
+  Sub054                     0.07    178.30    100.00    1.5000 RainGage_10          J024                
+  Sub055                     0.08    194.80    100.00    1.5000 RainGage_10          J020                
+  Sub056                     0.02     59.00    100.00    1.5000 RainGage_10          J022                
+  Sub057                     0.12    311.80    100.00    1.5000 RainGage_10          J_out22             
+  Sub058                     0.17    434.50    100.00    1.5000 RainGage_10          J_out22             
+  Sub059                     0.19     62.50      0.00    2.0000 RainGage_10          JA_out26            
+  Sub060                     0.01     33.30    100.00    1.5000 RainGage_10          J_out19             
+  Sub061                     0.01     37.50    100.00    1.5000 RainGage_10          J_out17             
+  Sub062                     0.01     30.80    100.00    1.5000 RainGage_10          J_out17             
+  Sub063                     0.02     41.00    100.00    1.5000 RainGage_10          J_out16             
+  Sub064                     0.01     14.30    100.00    1.5000 RainGage_10          J_out16             
+  Sub065                     0.01     35.30    100.00    1.5000 RainGage_10          J_out15             
+  Sub066                     0.02     61.50    100.00    1.5000 RainGage_10          J_out17             
+  Sub067                     0.03     17.70     80.00    2.0000 RainGage_10          J_out17             
+  Sub068                     0.02     10.10     80.00    2.0000 RainGage_10          J_out19             
+  Sub069                     0.06     38.70     80.00    2.0000 RainGage_10          J_out22             
+  Sub070                     0.16    105.80     80.00    2.0000 RainGage_10          J029                
+  Sub071                     0.08     56.40     80.00    2.0000 RainGage_10          J029                
+  Sub072                     0.06     40.50     80.00    2.0000 RainGage_10          J029                
+  Sub073                     0.07     48.80     80.00    2.0000 RainGage_10          J028                
+  Sub074                     0.16     81.70    100.00    1.5000 RainGage_10          J028                
+  Sub075                     0.05    125.80    100.00    1.5000 RainGage_10          J_out22             
+  Sub076                     0.09    213.00    100.00    1.5000 RainGage_10          J028                
+  Sub077                     0.05    117.50    100.00    1.5000 RainGage_10          J_out21             
+  Sub078                     0.23    579.50    100.00    1.5000 RainGage_10          J_out20             
+  Sub079                     0.05    130.30    100.00    1.5000 RainGage_10          J027                
+  Sub080                     0.00      1.30    100.00    1.5000 RainGage_10          J_out16             
+  Sub081                     0.01      6.30    100.00    1.5000 RainGage_10          J_out13             
+  Sub082                     0.03     74.80    100.00    1.5000 RainGage_10          J003                
+  Sub083                     0.07     43.90    100.00    2.0000 RainGage_10          Sub021              
+  Sub084                     0.02     60.30    100.00    1.5000 RainGage_10          J003                
+  Sub085                     0.05    114.50    100.00    1.5000 RainGage_10          J002                
+  Sub086                     0.04     11.80      0.00    2.0000 RainGage_10          JA_out28            
+  Sub087                     0.07    168.30    100.00    1.5000 RainGage_10          Sub021              
+  Sub088                     0.02      8.00      0.00    2.0000 RainGage_10          Sub015              
+  Sub089                     0.04     98.80    100.00    1.5000 RainGage_10          Sub021              
+  Sub090                     0.07    174.50    100.00    1.5000 RainGage_10          Sub021              
+  Sub091                     0.04    105.50    100.00    1.5000 RainGage_10          Sub097              
+  Sub092                     0.05    113.00    100.00    1.5000 RainGage_10          Sub098              
+  Sub093                     0.01     36.50    100.00    1.5000 RainGage_10          Sub395              
+  Sub094                     0.12     39.40      0.00    2.0000 RainGage_10          J008                
+  Sub095                     0.22     73.90      0.00    2.0000 RainGage_10          J010                
+  Sub096                     0.16     54.00      0.00    2.0000 RainGage_10          J011                
+  Sub097                     0.05     16.40      0.00    2.0000 RainGage_10          J013                
+  Sub098                     0.04     14.70      0.00    2.0000 RainGage_10          J014                
+  Sub099                     0.06     37.70    100.00    2.0000 RainGage_10          Sub094              
+  Sub100                     0.07     49.10    100.00    2.0000 RainGage_10          Sub095              
+  Sub101                     0.04     29.70    100.00    2.0000 RainGage_10          Sub097              
+  Sub102                     0.01      6.60     80.00    2.0000 RainGage_10          J015                
+  Sub103                     0.02     10.20     80.00    2.0000 RainGage_10          J012                
+  Sub104                     0.01      6.70     80.00    2.0000 RainGage_10          J009                
+  Sub105                     0.04    108.00    100.00    1.5000 RainGage_10          J_out05             
+  Sub106                     0.05    132.50    100.00    1.5000 RainGage_10          J_out04             
+  Sub107                     0.01      6.60    100.00    1.5000 RainGage_10          J015                
+  Sub108                     0.01      3.40    100.00    1.5000 RainGage_10          J015                
+  Sub109                     0.00      1.50    100.00    1.5000 RainGage_10          J015                
+  Sub110                     0.01      9.30     80.00    2.0000 RainGage_10          J015                
+  Sub111                     0.00     12.30    100.00    1.5000 RainGage_10          J014                
+  Sub112                     0.03     13.80    100.00    1.5000 RainGage_10          J_out04             
+  Sub113                     0.00      1.50    100.00    1.5000 RainGage_10          J_out04             
+  Sub114                     0.01      2.80    100.00    1.5000 RainGage_10          J_out04             
+  Sub115                     0.02     10.70     80.00    2.0000 RainGage_10          J_out04             
+  Sub116                     0.01     19.00    100.00    1.5000 RainGage_10          J015                
+  Sub117                     0.16    389.80    100.00    1.5000 RainGage_10          J017                
+  Sub118                     0.71    357.20     80.00    2.0000 RainGage_10          Sub021              
+  Sub119                     0.03     76.80    100.00    1.5000 RainGage_10          Sub094              
+  Sub120                     0.22    749.30    100.00    2.5000 RainGage_10          J_out15             
+  Sub121                     0.04    106.80    100.00    1.5000 RainGage_10          J_out16             
+  Sub122                     0.03     65.00    100.00    1.5000 RainGage_10          J_out17             
+  Sub123                     0.06    161.30    100.00    1.5000 RainGage_10          J020                
+  Sub124                     0.16    392.80    100.00    1.5000 RainGage_10          J_out20             
+  Sub125                     0.25    824.70    100.00    2.5000 RainGage_10          J031                
+  Sub126                     0.08     25.70      0.00    2.0000 RainGage_10          Sub021              
+  Sub127                     0.03     10.50      0.00    2.0000 RainGage_10          Sub019              
+  Sub128                     0.02      8.20      0.00    2.0000 RainGage_10          Sub015              
+  Sub129                     0.32    105.60      0.00    2.0000 RainGage_10          J_out13             
+  Sub130                     0.10     33.10      0.00    2.0000 RainGage_10          J_out13             
+  Sub131                     0.05     33.70    100.00    2.0000 RainGage_10          Sub096              
+  Sub132                     0.05     30.30    100.00    2.0000 RainGage_10          Sub098              
+  Sub133                     0.07     44.50    100.00    2.0000 RainGage_10          Sub377              
+  Sub134                     0.10    248.50    100.00    1.5000 RainGage_10          J029                
+  Sub135                     0.15    385.00    100.00    1.5000 RainGage_10          J029                
+  Sub136                     0.06     21.60      0.00    2.0000 RainGage_10          J029                
+  Sub137                     0.01     26.50    100.00    1.5000 RainGage_10          J028                
+  Sub138                     0.01     22.80    100.00    1.5000 RainGage_10          J_out22             
+  Sub139                     0.09    300.70    100.00    2.5000 RainGage_10          J020                
+  Sub140                     0.02     60.00    100.00    1.5000 RainGage_10          J_out15             
+  Sub141                     0.08    197.50    100.00    1.5000 RainGage_10          J_out14             
+  Sub142                     0.00      6.00    100.00    1.5000 RainGage_10          J_out15             
+  Sub143                     0.01     30.50    100.00    1.5000 RainGage_10          J_out15             
+  Sub144                     0.01     14.00    100.00    1.5000 RainGage_10          J_out15             
+  Sub145                     0.02     81.30    100.00    2.5000 RainGage_10          J_out19             
+  Sub146                     0.02      5.20      0.00    2.0000 RainGage_10          JA_out26            
+  Sub147                     0.07    174.50    100.00    1.5000 RainGage_10          Sub095              
+  Sub148                     0.08    192.50    100.00    1.5000 RainGage_10          Sub096              
+  Sub149                     0.05    125.80    100.00    1.5000 RainGage_10          Sub097              
+  Sub150                     0.06    145.80    100.00    1.5000 RainGage_10          J014                
+  Sub151                     0.02     42.50    100.00    1.5000 RainGage_10          Sub098              
+  Sub152                     0.01     23.80    100.00    1.5000 RainGage_10          Sub395              
+  Sub153                     0.07    178.30    100.00    1.5000 RainGage_10          J_out02             
+  Sub154                     0.02     59.80    100.00    1.5000 RainGage_10          J_out01             
+  Sub155                     0.04     92.50    100.00    1.5000 RainGage_10          J_out06             
+  Sub156                     0.06    159.50    100.00    1.5000 RainGage_10          J_out03             
+  Sub157                     0.18     90.80    100.00    2.0000 RainGage_10          J017                
+  Sub158                     0.46    303.40     80.00    2.0000 RainGage_10          Sub021              
+  Sub159                     0.10     64.50     80.00    2.0000 RainGage_10          JA_out28            
+  Sub160                     0.00      6.30    100.00    1.5000 RainGage_10          J_out15             
+  Sub161                     0.01     22.00    100.00    1.5000 RainGage_10          J_out15             
+  Sub162                     0.00      4.50    100.00    1.5000 RainGage_10          J_out15             
+  Sub163                     0.09     42.60    100.00    1.5000 RainGage_10          J_out13             
+  Sub164                     0.13    320.80    100.00    1.5000 RainGage_10          JA_out28            
+  Sub165                     0.14     46.60      0.00    2.0000 RainGage_10          Sub021              
+  Sub166                     0.49    246.90    100.00    1.5000 RainGage_10          J004                
+  Sub167                     0.13    327.30    100.00    1.5000 RainGage_10          J_out10             
+  Sub168                     0.07    169.50    100.00    1.5000 RainGage_10          J_out10             
+  Sub169                     0.02     53.00    100.00    1.5000 RainGage_10          J014                
+  Sub170                     0.03     85.00    100.00    1.5000 RainGage_10          J011                
+  Sub171                     0.04     13.00      0.00    2.0000 RainGage_10          J005                
+  Sub172                     0.29    956.00    100.00    2.5000 RainGage_10          J002                
+  Sub173                     0.01     24.30    100.00    1.5000 RainGage_10          J_out07             
+  Sub174                     0.00      0.40      0.00    2.0000 RainGage_10          J_out07             
+  Sub175                     0.06    144.50    100.00    1.5000 RainGage_10          J_out04             
+  Sub176                     0.05    154.70    100.00    2.5000 RainGage_10          J_out07             
+  Sub177                     0.07    176.30    100.00    1.5000 RainGage_10          J_out13             
+  Sub178                     0.03     70.00    100.00    1.5000 RainGage_10          J_out12             
+  Sub179                     0.07     33.50    100.00    1.5000 RainGage_10          J_out06             
+  Sub180                     0.03     14.30    100.00    1.5000 RainGage_10          J015                
+  Sub181                     0.00      1.80    100.00    1.5000 RainGage_10          J_out12             
+  Sub182                     0.00      0.50    100.00    1.5000 RainGage_10          J_out12             
+  Sub183                     0.00      0.50    100.00    1.5000 RainGage_10          J_out11             
+  Sub184                     0.00      1.00    100.00    1.5000 RainGage_10          J_out11             
+  Sub185                     0.00      1.80    100.00    1.5000 RainGage_10          J_out11             
+  Sub186                     0.01     13.80    100.00    1.5000 RainGage_10          J_out11             
+  Sub187                     0.02     43.50    100.00    1.5000 RainGage_10          J_out11             
+  Sub188                     0.08    205.00    100.00    1.5000 RainGage_10          J_out11             
+  Sub189                     0.00      4.50    100.00    1.5000 RainGage_10          J_out11             
+  Sub190                     0.02     51.30    100.00    1.5000 RainGage_10          J_out11             
+  Sub191                     0.05    114.30    100.00    1.5000 RainGage_10          J_out04             
+  Sub192                     0.00      4.50    100.00    1.5000 RainGage_10          J_out12             
+  Sub193                     0.05    130.80    100.00    1.5000 RainGage_10          J_out12             
+  Sub194                     0.08    204.00    100.00    1.5000 RainGage_10          J_out12             
+  Sub195                     0.00      4.50    100.00    1.5000 RainGage_10          J_out12             
+  Sub196                     0.00      4.30    100.00    1.5000 RainGage_10          J_out12             
+  Sub197                     0.00      0.70      0.00    2.0000 RainGage_10          J_out13             
+  Sub198                     0.01     12.50    100.00    1.5000 RainGage_10          J_out02             
+  Sub199                     0.01      3.30    100.00    1.5000 RainGage_10          J009                
+  Sub200                     0.02      8.10    100.00    1.5000 RainGage_10          J_out01             
+  Sub201                     0.01      4.80    100.00    1.5000 RainGage_10          J_out01             
+  Sub202                     0.05    118.80    100.00    1.5000 RainGage_10          J_out01             
+  Sub203                     0.00      5.00    100.00    1.5000 RainGage_10          J027                
+  Sub204                     0.01      2.60      0.00    2.0000 RainGage_10          J_out22             
+  Sub205                     0.00      5.30    100.00    1.5000 RainGage_10          J_out11             
+  Sub206                     0.00      8.00    100.00    1.5000 RainGage_10          J_out11             
+  Sub207                     0.00      7.00    100.00    1.5000 RainGage_10          J_out11             
+  Sub208                     0.01     25.80    100.00    1.5000 RainGage_10          J_out06             
+  Sub209                     0.05    120.80    100.00    1.5000 RainGage_10          J_out03             
+  Sub210                     0.01     13.30    100.00    1.5000 RainGage_10          J_out06             
+  Sub211                     0.00      6.30    100.00    1.5000 RainGage_10          J_out05             
+  Sub212                     0.01     37.50    100.00    1.5000 RainGage_10          J_out04             
+  Sub213                     0.00      5.80    100.00    1.5000 RainGage_10          J_out12             
+  Sub214                     0.00      7.50    100.00    1.5000 RainGage_10          J_out12             
+  Sub215                     0.00      7.30    100.00    1.5000 RainGage_10          J_out12             
+  Sub216                     0.01      2.80    100.00    1.5000 RainGage_10          J_out01             
+  Sub217                     0.01     23.80    100.00    1.5000 RainGage_10          J_out09             
+  Sub218                     0.00      0.50    100.00    1.5000 RainGage_10          J_out09             
+  Sub219                     0.04    108.30    100.00    1.5000 RainGage_10          J_out01             
+  Sub220                     0.01      5.60    100.00    1.5000 RainGage_10          J007                
+  Sub221                     0.04    104.50    100.00    1.5000 RainGage_10          JA_out28            
+  Sub222                     0.05    127.80    100.00    1.5000 RainGage_10          JA_out28            
+  Sub223                     0.27    671.30    100.00    1.5000 RainGage_10          J001                
+  Sub224                     0.02     70.30    100.00    2.5000 RainGage_10          J001                
+  Sub225                     0.00      0.00    100.00    1.5000 RainGage_10          Sub015              
+  Sub226                     0.01     19.00    100.00    1.5000 RainGage_10          J_out01             
+  Sub227                     0.00      6.30    100.00    1.5000 RainGage_10          J_out02             
+  Sub228                     0.00      9.80    100.00    1.5000 RainGage_10          J_out02             
+  Sub229                     0.01      6.20    100.00    1.5000 RainGage_10          J_out04             
+  Sub230                     0.01     27.00    100.00    1.5000 RainGage_10          J_out02             
+  Sub231                     0.14    481.70    100.00    2.5000 RainGage_10          J001                
+  Sub232                     0.16    405.80    100.00    1.5000 RainGage_10          J028                
+  Sub233                     0.04     13.10      0.00    2.0000 RainGage_10          JA_out27            
+  Sub234                     0.02     45.00    100.00    1.5000 RainGage_10          J_out15             
+  Sub235                     0.00      7.30    100.00    1.5000 RainGage_10          J_out15             
+  Sub236                     0.00      3.50    100.00    1.5000 RainGage_10          J_out16             
+  Sub237                     0.00      3.50    100.00    1.5000 RainGage_10          J_out16             
+  Sub238                     0.00      5.30    100.00    1.5000 RainGage_10          J_out15             
+  Sub239                     0.02     52.00    100.00    1.5000 RainGage_10          J_out13             
+  Sub240                     0.02     57.30    100.00    1.5000 RainGage_10          J_out09             
+  Sub241                     0.01     16.50    100.00    1.5000 RainGage_10          J_out09             
+  Sub242                     0.03     67.80    100.00    1.5000 RainGage_10          J_out07             
+  Sub243                     0.01     13.30    100.00    1.5000 RainGage_10          J_out07             
+  Sub244                     0.03     72.00    100.00    1.5000 RainGage_10          J_out06             
+  Sub245                     0.00      5.80    100.00    1.5000 RainGage_10          J015                
+  Sub246                     0.00      5.30    100.00    1.5000 RainGage_10          J_out05             
+  Sub247                     0.00      5.80    100.00    1.5000 RainGage_10          J_out04             
+  Sub248                     0.00      5.00    100.00    1.5000 RainGage_10          J_out02             
+  Sub249                     0.02     52.80    100.00    1.5000 RainGage_10          J009                
+  Sub250                     0.03     71.80    100.00    1.5000 RainGage_10          J007                
+  Sub251                     0.08    210.00    100.00    1.5000 RainGage_10          J001                
+  Sub252                     0.02     80.70    100.00    2.5000 RainGage_10          J020                
+  Sub253                     0.02     80.30    100.00    2.5000 RainGage_10          J021                
+  Sub254                     0.02     80.00    100.00    2.5000 RainGage_10          J024                
+  Sub255                     0.28    185.10    100.00    2.0000 RainGage_10          J005                
+  Sub256                     0.30    151.40    100.00    2.0000 RainGage_10          J_out23             
+  Sub257                     0.32    157.60    100.00    2.0000 RainGage_10          J031                
+  Sub258                     0.15     77.00    100.00    2.0000 RainGage_10          J003                
+  Sub259                     0.04     17.60    100.00    2.0000 RainGage_10          J003                
+  Sub260                     0.53    178.10    100.00    2.0000 RainGage_10          J_out24             
+  Sub261                     0.67    224.60    100.00    2.0000 RainGage_10          J_out24             
+  Sub262                     0.12     40.00    100.00    2.0000 RainGage_10          J_out23             
+  Sub263                     0.30    100.90    100.00    2.0000 RainGage_10          J024                
+  Sub264                     0.59    197.30    100.00    2.0000 RainGage_10          J022                
+  Sub265                     0.78    258.60    100.00    2.0000 RainGage_10          J021                
+  Sub266                     0.12     40.00    100.00    2.0000 RainGage_10          J027                
+  Sub267                     0.51    170.40    100.00    2.0000 RainGage_10          J_out21             
+  Sub268                     0.80    266.50    100.00    2.0000 RainGage_10          J_out20             
+  Sub269                     0.48    159.90    100.00    2.0000 RainGage_10          J_out20             
+  Sub270                     0.16     52.70    100.00    2.0000 RainGage_10          J_out19             
+  Sub271                     0.21     69.40    100.00    2.0000 RainGage_10          J_out19             
+  Sub272                     0.17     56.70    100.00    2.0000 RainGage_10          J_out18             
+  Sub273                     0.22     73.20    100.00    2.0000 RainGage_10          J_out18             
+  Sub274                     0.19     63.40    100.00    2.0000 RainGage_10          J_out17             
+  Sub275                     0.19     63.40    100.00    2.0000 RainGage_10          J_out17             
+  Sub276                     0.15     48.70    100.00    2.0000 RainGage_10          J_out16             
+  Sub277                     0.15     48.70    100.00    2.0000 RainGage_10          J_out16             
+  Sub278                     0.42    211.00    100.00    2.0000 RainGage_10          J_out14             
+  Sub279                     0.21     70.40    100.00    2.0000 RainGage_10          Sub039              
+  Sub280                     0.23     76.30    100.00    2.0000 RainGage_10          Sub070              
+  Sub281                     0.26     87.50    100.00    2.0000 RainGage_10          Sub035              
+  Sub282                     0.36    118.40    100.00    2.0000 RainGage_10          Sub037              
+  Sub283                     0.07     37.00    100.00    2.0000 RainGage_10          Sub094              
+  Sub284                     0.09     46.90    100.00    2.0000 RainGage_10          Sub094              
+  Sub285                     0.08     37.60    100.00    2.0000 RainGage_10          Sub094              
+  Sub286                     0.05     24.00    100.00    2.0000 RainGage_10          Sub094              
+  Sub287                     0.08     40.20    100.00    2.0000 RainGage_10          Sub094              
+  Sub288                     0.12     61.60    100.00    2.0000 RainGage_10          Sub095              
+  Sub289                     0.06     31.50    100.00    2.0000 RainGage_10          Sub095              
+  Sub290                     0.06     28.80    100.00    2.0000 RainGage_10          Sub095              
+  Sub291                     0.11     53.10    100.00    2.0000 RainGage_10          Sub095              
+  Sub292                     0.04     20.70    100.00    2.0000 RainGage_10          Sub095              
+  Sub293                     0.08     40.80    100.00    2.0000 RainGage_10          Sub095              
+  Sub294                     0.09     47.20    100.00    2.0000 RainGage_10          Sub096              
+  Sub295                     0.05     26.60    100.00    2.0000 RainGage_10          Sub096              
+  Sub296                     0.06     32.40    100.00    2.0000 RainGage_10          Sub096              
+  Sub297                     0.08     39.80    100.00    2.0000 RainGage_10          Sub096              
+  Sub298                     0.07     33.00    100.00    2.0000 RainGage_10          Sub096              
+  Sub299                     0.04     22.50    100.00    2.0000 RainGage_10          Sub096              
+  Sub300                     0.06     31.90    100.00    2.0000 RainGage_10          Sub097              
+  Sub301                     0.05     27.00    100.00    2.0000 RainGage_10          Sub097              
+  Sub302                     0.05     24.30    100.00    2.0000 RainGage_10          Sub097              
+  Sub303                     0.04     22.50    100.00    2.0000 RainGage_10          Sub097              
+  Sub304                     0.06     29.60    100.00    2.0000 RainGage_10          Sub097              
+  Sub305                     0.04     18.90    100.00    2.0000 RainGage_10          Sub097              
+  Sub306                     0.09     42.70    100.00    2.0000 RainGage_10          Sub098              
+  Sub307                     0.06     28.80    100.00    2.0000 RainGage_10          Sub098              
+  Sub308                     0.06     30.10    100.00    2.0000 RainGage_10          Sub098              
+  Sub309                     0.04     21.30    100.00    2.0000 RainGage_10          Sub395              
+  Sub310                     0.06     28.80    100.00    2.0000 RainGage_10          J012                
+  Sub311                     0.06     28.80    100.00    2.0000 RainGage_10          J009                
+  Sub312                     0.06     28.80    100.00    2.0000 RainGage_10          J015                
+  Sub313                     0.05     15.50    100.00    2.0000 RainGage_10          J_out01             
+  Sub314                     0.05     15.40    100.00    2.0000 RainGage_10          J_out01             
+  Sub315                     0.05     15.40    100.00    2.0000 RainGage_10          J_out01             
+  Sub316                     0.05     23.20    100.00    2.0000 RainGage_10          J_out02             
+  Sub317                     0.05     23.20    100.00    2.0000 RainGage_10          J_out02             
+  Sub318                     0.05     23.20    100.00    2.0000 RainGage_10          J_out02             
+  Sub319                     0.05     23.20    100.00    2.0000 RainGage_10          J_out02             
+  Sub320                     0.05     23.20    100.00    2.0000 RainGage_10          J_out02             
+  Sub321                     0.05     23.30    100.00    2.0000 RainGage_10          J_out03             
+  Sub322                     0.05     23.50    100.00    2.0000 RainGage_10          J_out03             
+  Sub323                     0.05     23.60    100.00    2.0000 RainGage_10          J_out03             
+  Sub324                     0.05     23.70    100.00    2.0000 RainGage_10          J_out03             
+  Sub325                     0.05     23.70    100.00    2.0000 RainGage_10          J_out03             
+  Sub326                     0.05     24.40    100.00    2.0000 RainGage_10          J_out04             
+  Sub327                     0.05     24.60    100.00    2.0000 RainGage_10          J_out04             
+  Sub328                     0.05     24.60    100.00    2.0000 RainGage_10          J_out04             
+  Sub329                     0.05     24.60    100.00    2.0000 RainGage_10          J_out04             
+  Sub330                     0.05     25.10    100.00    2.0000 RainGage_10          J_out05             
+  Sub331                     0.05     25.20    100.00    2.0000 RainGage_10          J_out05             
+  Sub332                     0.05     25.30    100.00    2.0000 RainGage_10          J_out05             
+  Sub333                     0.05     25.30    100.00    2.0000 RainGage_10          J_out05             
+  Sub334                     0.54    179.70    100.00    2.0000 RainGage_10          J006                
+  Sub335                     0.09     45.60    100.00    2.0000 RainGage_10          J003                
+  Sub336                     0.12     40.00    100.00    2.0000 RainGage_10          J004                
+  Sub337                     0.29     97.60    100.00    2.0000 RainGage_10          J003                
+  Sub338                     0.05     25.80    100.00    2.0000 RainGage_10          J_out06             
+  Sub339                     0.06     19.30    100.00    2.0000 RainGage_10          J001                
+  Sub340                     0.21    103.60    100.00    2.0000 RainGage_10          J_out07             
+  Sub341                     0.04     21.60    100.00    2.0000 RainGage_10          J_out07             
+  Sub342                     0.04     21.60    100.00    2.0000 RainGage_10          J_out07             
+  Sub343                     0.04     21.60    100.00    2.0000 RainGage_10          J_out07             
+  Sub344                     0.07     34.60    100.00    2.0000 RainGage_10          J_out07             
+  Sub345                     0.02     42.50    100.00    1.5000 RainGage_10          J_out10             
+  Sub346                     0.03     86.80    100.00    1.5000 RainGage_10          J_out16             
+  Sub347                     0.01     22.50    100.00    1.5000 RainGage_10          J_out17             
+  Sub348                     0.04     97.30    100.00    1.5000 RainGage_10          J_out19             
+  Sub349                     0.02     47.50    100.00    1.5000 RainGage_10          J_out18             
+  Sub350                     0.02     47.80    100.00    1.5000 RainGage_10          J_out18             
+  Sub351                     0.03     67.80    100.00    1.5000 RainGage_10          J_out17             
+  Sub352                     0.06    149.00    100.00    1.5000 RainGage_10          J_out18             
+  Sub353                     0.17    555.30    100.00    2.5000 RainGage_10          J006                
+  Sub354                     0.14    464.00    100.00    2.5000 RainGage_10          J007                
+  Sub355                     0.11    374.00    100.00    2.5000 RainGage_10          J008                
+  Sub356                     0.18    606.00    100.00    2.5000 RainGage_10          J009                
+  Sub357                     0.16    541.00    100.00    2.5000 RainGage_10          J010                
+  Sub358                     0.18    615.00    100.00    2.5000 RainGage_10          J011                
+  Sub359                     0.16    535.70    100.00    2.5000 RainGage_10          J011                
+  Sub360                     0.14    478.70    100.00    2.5000 RainGage_10          J014                
+  Sub361                     0.17    582.70    100.00    2.5000 RainGage_10          J012                
+  Sub362                     0.17    582.00    100.00    2.5000 RainGage_10          J013                
+  Sub363                     0.16    538.30    100.00    2.5000 RainGage_10          J014                
+  Sub364                     0.16    527.00    100.00    2.5000 RainGage_10          J015                
+  Sub365                     0.15    500.30    100.00    2.5000 RainGage_10          J018                
+  Sub366                     0.12    398.70    100.00    2.5000 RainGage_10          J016                
+  Sub367                     0.19    627.00    100.00    2.5000 RainGage_10          J017                
+  Sub368                     0.12    386.70    100.00    2.5000 RainGage_10          J016                
+  Sub369                     0.09    216.80    100.00    1.5000 RainGage_10          Sub377              
+  Sub370                     0.10    239.30    100.00    1.5000 RainGage_10          Sub377              
+  Sub371                     0.11    275.00    100.00    1.5000 RainGage_10          Sub020              
+  Sub372                     0.09    222.80    100.00    1.5000 RainGage_10          Sub015              
+  Sub373                     0.16    401.00    100.00    1.5000 RainGage_10          Sub015              
+  Sub374                     0.13    315.00    100.00    1.5000 RainGage_10          Sub015              
+  Sub375                     0.13    315.00    100.00    1.5000 RainGage_10          Sub020              
+  Sub376                     0.14    354.30    100.00    1.5000 RainGage_10          Sub377              
+  Sub377                     0.33    109.10      0.00    2.0000 RainGage_10          Sub020              
+  Sub378                     0.05    122.00    100.00    1.5000 RainGage_10          Sub096              
+  Sub379                     0.04     92.50    100.00    1.5000 RainGage_10          Sub096              
+  Sub380                     0.04    103.50    100.00    1.5000 RainGage_10          Sub096              
+  Sub381                     0.07    186.30    100.00    1.5000 RainGage_10          Sub095              
+  Sub382                     0.05    134.30    100.00    1.5000 RainGage_10          Sub095              
+  Sub383                     0.13    320.30    100.00    1.5000 RainGage_10          Sub095              
+  Sub384                     0.10    238.80    100.00    1.5000 RainGage_10          Sub094              
+  Sub385                     0.03     81.50    100.00    1.5000 RainGage_10          J009                
+  Sub386                     0.03      9.90      0.00    2.0000 RainGage_10          J009                
+  Sub387                     0.07     24.70      0.00    2.0000 RainGage_10          J009                
+  Sub388                     0.02      7.50      0.00    2.0000 RainGage_10          J009                
+  Sub389                     0.04     13.10      0.00    2.0000 RainGage_10          J012                
+  Sub390                     0.05     15.10      0.00    2.0000 RainGage_10          J012                
+  Sub391                     0.05    134.00    100.00    1.5000 RainGage_10          Sub097              
+  Sub392                     0.06    154.50    100.00    1.5000 RainGage_10          Sub097              
+  Sub393                     0.05    127.50    100.00    1.5000 RainGage_10          Sub097              
+  Sub394                     0.04    108.80    100.00    1.5000 RainGage_10          Sub098              
+  Sub395                     0.02      7.90      0.00    2.0000 RainGage_10          J015                
+  Sub396                     0.21     70.10    100.00    2.0000 RainGage_10          Sub039              
+  Sub397                     0.18     61.20    100.00    2.0000 RainGage_10          Sub035              
+  Sub398                     0.12     39.90    100.00    2.0000 RainGage_10          Sub037              
+  Sub399                     0.29     95.30    100.00    2.0000 RainGage_10          Sub070              
+  Sub400                     0.20    505.50    100.00    1.5000 RainGage_10          J029                
+  Sub401                     0.07    170.30    100.00    1.5000 RainGage_10          J_out19             
+  Sub402                     0.17    420.80    100.00    1.5000 RainGage_10          J001                
+  Sub403                     0.17    418.80    100.00    1.5000 RainGage_10          J003                
+  Sub404                     0.07    164.30    100.00    1.5000 RainGage_10          J_out01             
+  Sub405                     0.04     98.30    100.00    1.5000 RainGage_10          J_out02             
+  Sub406                     0.04    107.30    100.00    1.5000 RainGage_10          J_out06             
+  Sub407                     0.04    112.00    100.00    1.5000 RainGage_10          J_out04             
+  Sub408                     0.03     65.30    100.00    1.5000 RainGage_10          J_out04             
+  Sub409                     0.03     68.50    100.00    1.5000 RainGage_10          J_out05             
+  Sub410                     0.02     44.30    100.00    1.5000 RainGage_10          J_out05             
+  Sub411                     0.06     30.30    100.00    1.5000 RainGage_10          J_out06             
+  Sub412                     0.05    129.00    100.00    1.5000 RainGage_10          J_out08             
+  Sub413                     0.04    104.30    100.00    1.5000 RainGage_10          J_out05             
+  Sub414                     0.04     90.50    100.00    1.5000 RainGage_10          J_out05             
+  Sub415                     0.04     94.50    100.00    1.5000 RainGage_10          J_out06             
+  Sub416                     0.05    123.30    100.00    1.5000 RainGage_10          J_out06             
+  Sub417                     0.06    151.30    100.00    1.5000 RainGage_10          J_out07             
+  Sub418                     0.07    166.30    100.00    1.5000 RainGage_10          J_out07             
+  Sub419                     0.06    157.30    100.00    1.5000 RainGage_10          J_out08             
+  Sub420                     0.19     61.70      0.00    2.0000 RainGage_10          J023                
+  Sub421                     0.14     45.60      0.00    2.0000 RainGage_10          J021                
+  Sub422                     0.18     61.60      0.00    2.0000 RainGage_10          J022                
+  Sub423                     0.25     84.60      0.00    2.0000 RainGage_10          J_out22             
+  Sub424                     0.07    220.70    100.00    2.5000 RainGage_10          J021                
+  Sub425                     0.11    351.00    100.00    2.5000 RainGage_10          J021                
+  Sub426                     0.11    286.50    100.00    1.5000 RainGage_10          J021                
+  Sub427                     0.07    225.70    100.00    2.5000 RainGage_10          J021                
+  Sub428                     0.11    354.00    100.00    2.5000 RainGage_10          J021                
+  Sub429                     0.11    379.00    100.00    2.5000 RainGage_10          J022                
+  Sub430                     0.13    438.70    100.00    2.5000 RainGage_10          J022                
+  Sub431                     0.05    157.00    100.00    2.5000 RainGage_10          J023                
+  Sub432                     0.17    567.70    100.00    2.5000 RainGage_10          J024                
+  Sub433                     0.31   1023.30    100.00    2.5000 RainGage_10          J027                
+  Sub434                     0.12    414.70    100.00    2.5000 RainGage_10          J025                
+  Sub435                     0.19    628.00    100.00    2.5000 RainGage_10          J026                
+  Sub436                     0.11    356.00    100.00    2.5000 RainGage_10          J_out15             
+  Sub437                     0.03    100.70    100.00    2.5000 RainGage_10          J_out18             
+  Sub438                     0.04    134.70    100.00    2.5000 RainGage_10          J_out17             
+  Sub439                     0.08    192.30    100.00    1.5000 RainGage_10          J_out14             
+  Sub440                     0.00      0.00      0.00    2.0000 RainGage_10          Sub015              
+  Sub441                     0.00      0.00      0.00    2.0000 RainGage_10          Sub015              
+  Sub442                     0.40    133.60      0.00    2.0000 RainGage_10          JA_out27            
+  Sub443                     0.32    105.00      0.00    2.0000 RainGage_10          J019                
+  Sub444                     0.29     73.50    100.00    2.0000 RainGage_10          Sub020              
+  Sub445                     0.35     88.60    100.00    2.0000 RainGage_10          Sub021              
+  Sub446                     0.38     97.10    100.00    2.0000 RainGage_10          Sub021              
+  Sub447                     0.37     94.50    100.00    2.0000 RainGage_10          Sub019              
+  Sub448                     0.31     79.40    100.00    2.0000 RainGage_10          Sub377              
+  Sub449                     0.09    235.50    100.00    1.5000 RainGage_10          J022                
+  Sub450                     0.08    197.30    100.00    1.5000 RainGage_10          J024                
+  Sub451                     0.12    302.30    100.00    1.5000 RainGage_10          J025                
+  Sub452                     0.16    548.70    100.00    2.5000 RainGage_10          J029                
+  Sub453                     0.10    319.70    100.00    2.5000 RainGage_10          J031                
+  Sub454                     0.31   1031.70    100.00    2.5000 RainGage_10          J029                
+  Sub455                     0.26    858.30    100.00    2.5000 RainGage_10          J031                
+  Sub456                     0.12     61.40    100.00    1.5000 RainGage_10          J_out24             
+  Sub457                     0.09     42.90    100.00    1.5000 RainGage_10          J_out24             
+  Sub458                     0.06    146.00    100.00    1.5000 RainGage_10          Sub021              
+  Sub459                     0.02     52.80    100.00    1.5000 RainGage_10          Sub015              
+  Sub460                     0.03     81.80    100.00    1.5000 RainGage_10          Sub019              
+  Sub461                     0.02     53.80    100.00    1.5000 RainGage_10          Sub377              
+  Sub462                     0.03     63.50    100.00    1.5000 RainGage_10          Sub377              
+  Sub463                     0.03     69.80    100.00    1.5000 RainGage_10          Sub020              
+  Sub464                     0.10    261.00    100.00    1.5000 RainGage_10          J_out12             
+  Sub465                     0.09    214.00    100.00    1.5000 RainGage_10          J_out11             
+  Sub466                     0.05    130.00    100.00    1.5000 RainGage_10          J_out10             
+
+
+  *******************
+  LID Control Summary
+  *******************
+                                   No. of        Unit        Unit      % Area    % Imperv      % Perv
+  Subcatchment     LID Control      Units        Area       Width     Covered     Treated     Treated
+  ---------------------------------------------------------------------------------------------------
+  Sub000           GR-EX1               1        0.00        0.00        0.00        0.00        0.00
+  Sub289           RB-RS1               1        1.00        0.00        0.16      100.00        0.00
+  Sub290           GR-IN1               1      576.00      100.00      100.00      100.00      100.00
+  Sub291           GR-EX1               1     1061.00       40.00      100.00      100.00      100.00
+  Sub381           BC-TP1               3        4.00        2.00        1.61      100.00      100.00
+  Sub383           BC-TP1               3        4.00        2.00        0.94       20.00       20.00
+  
+  
+  ************
+  Node Summary
+  ************
+                                           Invert      Max.    Ponded    External
+  Name                 Type                 Elev.     Depth      Area    Inflow  
+  -------------------------------------------------------------------------------
+  J002                 JUNCTION              3.50      0.30       0.0
+  J003                 JUNCTION              3.60      0.30       0.0
+  J004                 JUNCTION              3.70      0.30       0.0
+  J005                 JUNCTION              3.80      0.30       0.0
+  J001                 JUNCTION              3.60      0.30       0.0
+  J006                 JUNCTION              3.40      0.30       0.0
+  J007                 JUNCTION              3.30      0.30       0.0
+  J008                 JUNCTION              3.20      0.30       0.0
+  J009                 JUNCTION              3.10      0.30       0.0
+  J010                 JUNCTION              3.00      0.30       0.0
+  J011                 JUNCTION              2.90      0.30       0.0
+  J012                 JUNCTION              2.80      0.30       0.0
+  J013                 JUNCTION              2.70      0.30       0.0
+  J014                 JUNCTION              2.60      0.30       0.0
+  J015                 JUNCTION              2.50      0.30       0.0
+  J016                 JUNCTION              2.40      0.30       0.0
+  J017                 JUNCTION              2.30      0.30       0.0
+  J018                 JUNCTION              2.20      0.30       0.0
+  J019                 JUNCTION              2.20      0.30       0.0
+  J020                 JUNCTION              2.30      0.30       0.0
+  J021                 JUNCTION              2.40      0.30       0.0
+  J022                 JUNCTION              2.50      0.30       0.0
+  J023                 JUNCTION              2.60      0.30       0.0
+  J025                 JUNCTION              2.80      0.30       0.0
+  J024                 JUNCTION              2.70      0.30       0.0
+  J026                 JUNCTION              2.70      0.30       0.0
+  J027                 JUNCTION              2.60      0.30       0.0
+  J028                 JUNCTION              2.50      0.30       0.0
+  J029                 JUNCTION              2.40      0.30       0.0
+  J030                 JUNCTION              2.30      0.30       0.0
+  J031                 JUNCTION              2.20      0.30       0.0
+  J_out01              JUNCTION              2.00      0.30       0.0
+  J_out02              JUNCTION              2.00      0.30       0.0
+  J_out03              JUNCTION              2.00      0.30       0.0
+  J_out04              JUNCTION              2.00      0.30       0.0
+  J_out05              JUNCTION              2.00      0.30       0.0
+  J_out06              JUNCTION              2.00      0.30       0.0
+  J_out07              JUNCTION              2.00      0.30       0.0
+  J_out08              JUNCTION              2.00      0.30       0.0
+  J_out09              JUNCTION              2.00      0.30       0.0
+  J_out10              JUNCTION              2.00      0.30       0.0
+  J_out11              JUNCTION              2.00      0.30       0.0
+  J_out12              JUNCTION              2.00      0.30       0.0
+  J_out13              JUNCTION              2.00      0.30       0.0
+  J_out14              JUNCTION              2.00      0.30       0.0
+  J_out15              JUNCTION              2.00      0.30       0.0
+  J_out16              JUNCTION              2.00      0.30       0.0
+  J_out17              JUNCTION              2.00      0.30       0.0
+  J_out18              JUNCTION              2.00      0.30       0.0
+  J_out19              JUNCTION              2.00      0.30       0.0
+  J_out20              JUNCTION              2.00      0.30       0.0
+  J_out21              JUNCTION              2.00      0.30       0.0
+  J_out22              JUNCTION              2.00      0.30       0.0
+  J_out23              JUNCTION              2.00      0.30       0.0
+  J_out24              JUNCTION              2.00      0.30       0.0
+  J_out25              JUNCTION              2.00      0.30       0.0
+  JA_out26             JUNCTION              1.50      0.30       0.0
+  JA_out27             JUNCTION              1.50      0.30       0.0
+  JA_out28             JUNCTION              1.50      0.30       0.0
+  JE_out               JUNCTION              1.10      1.00       0.0
+  Outfall1             OUTFALL               1.00      1.00       0.0
+  
+  
+  ************
+  Link Summary
+  ************
+  Name             From Node        To Node          Type            Length    %Slope Roughness
+  ---------------------------------------------------------------------------------------------
+  C_out01          J_out01          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out02          J_out02          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out03          J_out03          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out04          J_out04          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out05          J_out05          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out06          J_out06          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out07          J_out07          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out08          J_out08          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out09          J_out09          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out10          J_out10          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out11          J_out11          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out12          J_out12          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out13          J_out13          JA_out28         CONDUIT           10.0    5.0063    0.0130
+  C_out14          J_out14          JA_out26         CONDUIT           10.0    5.0063    0.0130
+  C_out15          J_out15          JA_out26         CONDUIT           10.0    5.0063    0.0130
+  C_out16          J_out16          JA_out26         CONDUIT           10.0    5.0063    0.0130
+  C_out17          J_out17          JA_out26         CONDUIT           10.0    5.0063    0.0130
+  C_out18          J_out18          JA_out26         CONDUIT           10.0    5.0063    0.0130
+  C_out19          J_out19          JA_out26         CONDUIT           10.0    5.0063    0.0130
+  C_out20          J_out20          JA_out27         CONDUIT           10.0    5.0063    0.0130
+  C_out21          J_out21          JA_out27         CONDUIT           10.0    5.0063    0.0130
+  C_out22          J_out22          JA_out27         CONDUIT           10.0    5.0063    0.0130
+  C_out23          J_out23          JA_out27         CONDUIT           10.0    5.0063    0.0130
+  C_out24          J_out24          JA_out27         CONDUIT           10.0    5.0063    0.0130
+  C_out25          J_out25          JA_out27         CONDUIT           10.0    5.0063    0.0130
+  C_out26          JA_out26         JE_out           CONDUIT           10.0    4.0032    0.0130
+  C_out27          JA_out27         JE_out           CONDUIT           10.0    4.0032    0.0130
+  C_out28          JA_out28         JE_out           CONDUIT           10.0    4.0032    0.0130
+  C_out29          J018             JA_out28         CONDUIT           10.0    7.0172    0.0130
+  C_out30          J019             JA_out27         CONDUIT           10.0    7.0172    0.0130
+  C_out31          J031             JA_out27         CONDUIT           10.0    7.0172    0.0130
+  C001             J001             J002             CONDUIT           69.0    0.1449    0.0130
+  C002             J003             J002             CONDUIT           40.0    0.2500    0.0130
+  C003             J004             J003             CONDUIT           79.0    0.1266    0.0130
+  C004             J005             J004             CONDUIT           68.0    0.1471    0.0130
+  C005             J002             J006             CONDUIT           66.0    0.1515    0.0130
+  C006             J006             J007             CONDUIT           54.0    0.1852    0.0130
+  C007             J007             J008             CONDUIT           30.0    0.3333    0.0130
+  C008             J008             J009             CONDUIT           67.0    0.1493    0.0130
+  C009             J009             J010             CONDUIT           72.0    0.1389    0.0130
+  C010             J010             J011             CONDUIT          127.0    0.0787    0.0130
+  C011             J011             J012             CONDUIT           64.0    0.1563    0.0130
+  C012             J012             J013             CONDUIT           64.0    0.1563    0.0130
+  C013             J013             J014             CONDUIT          117.0    0.0855    0.0130
+  C014             J014             J015             CONDUIT           60.0    0.1667    0.0130
+  C015             J015             J016             CONDUIT           68.0    0.1471    0.0130
+  C016             J016             J017             CONDUIT           65.0    0.1538    0.0130
+  C017             J017             J018             CONDUIT           50.0    0.2000    0.0130
+  C018             J020             J019             CONDUIT           51.0    0.1961    0.0130
+  C019             J021             J020             CONDUIT          144.0    0.0694    0.0130
+  C020             J022             J021             CONDUIT          229.0    0.0437    0.0130
+  C021             J023             J022             CONDUIT           95.0    0.1053    0.0130
+  C022             J024             J023             CONDUIT           62.0    0.1613    0.0130
+  C023             J025             J024             CONDUIT           85.0    0.1176    0.0130
+  C025             J026             J027             CONDUIT          137.0    0.0730    0.0130
+  C026             J027             J028             CONDUIT           97.0    0.1031    0.0130
+  C027             J028             J029             CONDUIT          146.0    0.0685    0.0130
+  C028             J029             J030             CONDUIT          102.0    0.0980    0.0130
+  C029             J030             J031             CONDUIT          180.0    0.0556    0.0130
+  C_out_end        JE_out           Outfall1         CONDUIT           10.0    1.0001    0.0100
+  
+  
+  *********************
+  Cross Section Summary
+  *********************
+                                        Full     Full     Hyd.     Max.   No. of     Full
+  Conduit          Shape               Depth     Area     Rad.    Width  Barrels     Flow
+  ---------------------------------------------------------------------------------------
+  C_out01          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out02          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out03          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out04          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out05          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out06          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out07          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out08          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out09          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out10          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out11          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out12          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out13          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out14          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out15          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out16          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out17          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out18          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out19          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out20          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out21          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out22          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out23          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out24          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out25          CIRCULAR             0.30     0.07     0.07     0.30        1   216.38
+  C_out26          CIRCULAR             0.30     0.07     0.07     0.30        1   193.49
+  C_out27          CIRCULAR             0.30     0.07     0.07     0.30        1   193.49
+  C_out28          CIRCULAR             0.30     0.07     0.07     0.30        1   193.49
+  C_out29          CIRCULAR             0.30     0.07     0.07     0.30        1   256.18
+  C_out30          CIRCULAR             0.30     0.07     0.07     0.30        1   256.18
+  C_out31          CIRCULAR             0.30     0.07     0.07     0.30        1   256.18
+  C001             CIRCULAR             0.30     0.07     0.07     0.30        1    36.82
+  C002             CIRCULAR             0.30     0.07     0.07     0.30        1    48.35
+  C003             CIRCULAR             0.30     0.07     0.07     0.30        1    34.41
+  C004             CIRCULAR             0.30     0.07     0.07     0.30        1    37.09
+  C005             CIRCULAR             0.30     0.07     0.07     0.30        1    37.64
+  C006             CIRCULAR             0.30     0.07     0.07     0.30        1    41.62
+  C007             CIRCULAR             0.30     0.07     0.07     0.30        1    55.83
+  C008             CIRCULAR             0.30     0.07     0.07     0.30        1    37.36
+  C009             CIRCULAR             0.30     0.07     0.07     0.30        1    36.04
+  C010             CIRCULAR             0.30     0.07     0.07     0.30        1    27.14
+  C011             CIRCULAR             0.30     0.07     0.07     0.30        1    38.23
+  C012             CIRCULAR             0.30     0.07     0.07     0.30        1    38.23
+  C013             CIRCULAR             0.30     0.07     0.07     0.30        1    28.27
+  C014             CIRCULAR             0.30     0.07     0.07     0.30        1    39.48
+  C015             CIRCULAR             0.30     0.07     0.07     0.30        1    37.09
+  C016             CIRCULAR             0.30     0.07     0.07     0.30        1    37.93
+  C017             CIRCULAR             0.30     0.07     0.07     0.30        1    43.25
+  C018             CIRCULAR             0.30     0.07     0.07     0.30        1    42.82
+  C019             CIRCULAR             0.30     0.07     0.07     0.30        1    25.48
+  C020             CIRCULAR             0.30     0.07     0.07     0.30        1    20.21
+  C021             CIRCULAR             0.30     0.07     0.07     0.30        1    31.38
+  C022             CIRCULAR             0.30     0.07     0.07     0.30        1    38.84
+  C023             CIRCULAR             0.30     0.07     0.07     0.30        1    33.17
+  C025             CIRCULAR             0.30     0.07     0.07     0.30        1    26.13
+  C026             CIRCULAR             0.30     0.07     0.07     0.30        1    31.05
+  C027             CIRCULAR             0.30     0.07     0.07     0.30        1    25.31
+  C028             CIRCULAR             0.30     0.07     0.07     0.30        1    30.28
+  C029             CIRCULAR             0.30     0.07     0.07     0.30        1    22.79
+  C_out_end        CIRCULAR             1.00     0.79     0.25     1.00        1  3117.12
+  
+  
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  2-yr       01/01/2021   01/01/2021       5 min        24          0          0
+  5-yr       01/01/2021   01/01/2021       5 min        24          0          0
+  10-yr      01/01/2021   01/01/2021       5 min        24          0          0
+  50-yr      01/01/2021   01/01/2021       5 min        24          0          0
+  100-yr     01/01/2021   01/01/2021       5 min        24          0          0
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... LPS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... NO
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... DYNWAVE
+  Surcharge Method ......... EXTRAN
+  Starting Date ............ 01/01/2021 00:00:00
+  Ending Date .............. 01/01/2021 04:00:00
+  Antecedent Dry Days ...... 0.0
+  Report Time Step ......... 00:01:00
+  Wet Time Step ............ 00:01:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 60.00 sec
+  Variable Time Step ....... YES
+  Maximum Trials ........... 8
+  Number of Threads ........ 1
+  Head Tolerance ........... 0.001500 m
+  
+  
+  *********************
+  Control Actions Taken
+  *********************
+
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     hectare-m            mm
+  **************************     ---------       -------
+  Initial LID Storage ......         0.005         0.113
+  Total Precipitation ......         0.132         2.896
+  Evaporation Loss .........         0.001         0.022
+  Infiltration Loss ........         0.035         0.768
+  Surface Runoff ...........         0.042         0.922
+  Final Storage ............         0.059         1.300
+  Continuity Error (%) .....        -0.093
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        hectare-m      10^6 ltr
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         0.042         0.420
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         0.042         0.418
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.002
+  Continuity Error (%) .....         0.000
+  
+  
+  *************************
+  Highest Continuity Errors
+  *************************
+  Node J030 (1.35%)
+  
+  
+  ***************************
+  Time-Step Critical Elements
+  ***************************
+  Link C_out27 (38.53%)
+  Link C_out29 (37.66%)
+  Link C_out_end (15.79%)
+  Link C_out28 (7.66%)
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :     1.99 sec
+  Average Time Step           :     4.29 sec
+  Maximum Time Step           :    60.00 sec
+  Percent in Steady State     :    -0.00
+  Average Iterations per Step :     2.00
+  Percent Not Converging      :     0.03
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  ------------------------------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total     Imperv       Perv      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff     Runoff     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 mm         mm         mm         mm         mm         mm         mm    10^6 ltr      LPS
+  ------------------------------------------------------------------------------------------------------------------------------
+  Sub000                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     0.62   0.499
+  Sub001                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     0.72   0.499
+  Sub002                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     3.22   0.500
+  Sub003                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.51   0.403
+  Sub004                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub005                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     6.88   0.509
+  Sub006                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     2.85   0.500
+  Sub007                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.67   0.509
+  Sub008                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.58   0.512
+  Sub009                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub010                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     5.99   0.509
+  Sub011                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub012                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub013                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     3.87   0.497
+  Sub014                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.01     9.03   0.509
+  Sub015                     2.90       4.18       0.00       7.07       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub016                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.62   0.500
+  Sub017                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub018                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     2.49   0.512
+  Sub019                     2.90       1.63       0.00       4.53       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub020                     2.90       3.85       0.00       6.74       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub021                     2.90       6.89       0.00       9.79       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub022                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.15   0.509
+  Sub023                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.92   0.509
+  Sub024                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.73   0.509
+  Sub025                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.80   0.509
+  Sub026                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.09   0.509
+  Sub027                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.21   0.509
+  Sub028                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     5.28   0.512
+  Sub029                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.38   0.403
+  Sub030                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.57   0.403
+  Sub031                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub032                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     1.69   0.512
+  Sub033                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     4.85   0.509
+  Sub034                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub035                     2.90      21.48       0.00      24.38       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub036                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub037                     2.90      21.44       0.00      24.33       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub038                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub039                     2.90       8.20       0.00      11.09       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub040                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.32   0.500
+  Sub041                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.36   0.500
+  Sub042                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     1.07   0.503
+  Sub043                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub044                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub045                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub046                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub047                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.55   0.500
+  Sub048                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.69   0.500
+  Sub049                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub050                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.53   0.509
+  Sub051                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.53   0.509
+  Sub052                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.13   0.509
+  Sub053                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     4.28   0.509
+  Sub054                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.62   0.509
+  Sub055                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.77   0.509
+  Sub056                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.54   0.509
+  Sub057                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.84   0.509
+  Sub058                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.96   0.509
+  Sub059                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub060                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.30   0.509
+  Sub061                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.34   0.509
+  Sub062                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.28   0.509
+  Sub063                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.37   0.509
+  Sub064                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.13   0.509
+  Sub065                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.32   0.509
+  Sub066                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.56   0.509
+  Sub067                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.33   0.403
+  Sub068                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.19   0.403
+  Sub069                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.73   0.403
+  Sub070                     2.90       4.69       0.02       1.52       4.91       0.00       4.91        0.01     7.11   0.648
+  Sub071                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     1.06   0.403
+  Sub072                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.76   0.403
+  Sub073                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.92   0.403
+  Sub074                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.99   0.500
+  Sub075                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.15   0.509
+  Sub076                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.94   0.509
+  Sub077                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.07   0.509
+  Sub078                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     5.28   0.509
+  Sub079                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.19   0.509
+  Sub080                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.01   0.509
+  Sub081                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.15   0.500
+  Sub082                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.68   0.509
+  Sub083                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     0.95   0.503
+  Sub084                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.55   0.509
+  Sub085                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.04   0.509
+  Sub086                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub087                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.53   0.509
+  Sub088                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub089                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.90   0.509
+  Sub090                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.59   0.509
+  Sub091                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.96   0.509
+  Sub092                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.03   0.509
+  Sub093                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.33   0.509
+  Sub094                     2.90       6.82       0.00       9.72       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub095                     2.90       6.04       0.00       8.94       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub096                     2.90       5.92       0.00       8.82       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub097                     2.90      18.21       0.00      21.10       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub098                     2.90      11.72       0.00      14.61       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub099                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     0.81   0.503
+  Sub100                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     1.06   0.503
+  Sub101                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     0.64   0.503
+  Sub102                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.12   0.403
+  Sub103                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.19   0.403
+  Sub104                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.13   0.403
+  Sub105                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.98   0.509
+  Sub106                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.21   0.509
+  Sub107                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.16   0.500
+  Sub108                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.08   0.500
+  Sub109                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.04   0.500
+  Sub110                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.17   0.403
+  Sub111                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.11   0.509
+  Sub112                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.34   0.500
+  Sub113                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.04   0.500
+  Sub114                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.07   0.500
+  Sub115                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     0.20   0.403
+  Sub116                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.17   0.509
+  Sub117                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.55   0.509
+  Sub118                     2.90       0.00       0.02       0.58       1.16       0.00       1.16        0.01     8.01   0.402
+  Sub119                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.70   0.509
+  Sub120                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     6.29   0.512
+  Sub121                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.97   0.509
+  Sub122                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.59   0.509
+  Sub123                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.47   0.509
+  Sub124                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.58   0.509
+  Sub125                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     6.92   0.512
+  Sub126                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub127                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub128                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub129                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub130                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub131                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     0.73   0.503
+  Sub132                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     0.65   0.503
+  Sub133                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     0.96   0.503
+  Sub134                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.26   0.509
+  Sub135                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.51   0.509
+  Sub136                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub137                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.24   0.509
+  Sub138                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.21   0.509
+  Sub139                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     2.52   0.512
+  Sub140                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.55   0.509
+  Sub141                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.80   0.509
+  Sub142                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub143                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.28   0.509
+  Sub144                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.13   0.509
+  Sub145                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     0.68   0.512
+  Sub146                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub147                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.59   0.509
+  Sub148                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.75   0.509
+  Sub149                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.15   0.509
+  Sub150                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.33   0.509
+  Sub151                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.39   0.509
+  Sub152                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.22   0.509
+  Sub153                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.62   0.509
+  Sub154                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.54   0.509
+  Sub155                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.84   0.509
+  Sub156                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.45   0.509
+  Sub157                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     2.34   0.501
+  Sub158                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.01     5.70   0.403
+  Sub159                     2.90       0.00       0.02       0.58       1.17       0.00       1.17        0.00     1.21   0.403
+  Sub160                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.06   0.509
+  Sub161                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.20   0.509
+  Sub162                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.04   0.509
+  Sub163                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.04   0.500
+  Sub164                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.92   0.509
+  Sub165                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub166                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.01     6.01   0.500
+  Sub167                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.98   0.509
+  Sub168                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.54   0.509
+  Sub169                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.48   0.509
+  Sub170                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.77   0.509
+  Sub171                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub172                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     8.02   0.512
+  Sub173                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.22   0.509
+  Sub174                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub175                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.32   0.509
+  Sub176                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     1.30   0.512
+  Sub177                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.61   0.509
+  Sub178                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.64   0.509
+  Sub179                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.81   0.500
+  Sub180                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.35   0.500
+  Sub181                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.02   0.509
+  Sub182                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.00   0.509
+  Sub183                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.00   0.509
+  Sub184                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.01   0.509
+  Sub185                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.02   0.509
+  Sub186                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.13   0.509
+  Sub187                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.40   0.509
+  Sub188                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.87   0.509
+  Sub189                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.04   0.509
+  Sub190                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.47   0.509
+  Sub191                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.04   0.509
+  Sub192                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.04   0.509
+  Sub193                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.19   0.509
+  Sub194                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.86   0.509
+  Sub195                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.04   0.509
+  Sub196                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.04   0.509
+  Sub197                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub198                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.11   0.509
+  Sub199                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.08   0.500
+  Sub200                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.20   0.500
+  Sub201                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.12   0.500
+  Sub202                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.08   0.509
+  Sub203                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub204                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub205                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub206                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.07   0.509
+  Sub207                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.06   0.509
+  Sub208                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.23   0.509
+  Sub209                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.10   0.509
+  Sub210                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.12   0.509
+  Sub211                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.06   0.509
+  Sub212                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.34   0.509
+  Sub213                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub214                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.07   0.509
+  Sub215                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.07   0.509
+  Sub216                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.07   0.500
+  Sub217                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.22   0.509
+  Sub218                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.00   0.509
+  Sub219                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.99   0.509
+  Sub220                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.14   0.500
+  Sub221                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.95   0.509
+  Sub222                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.16   0.509
+  Sub223                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     6.12   0.509
+  Sub224                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     0.59   0.512
+  Sub226                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.17   0.509
+  Sub227                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.06   0.509
+  Sub228                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.09   0.509
+  Sub229                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.15   0.500
+  Sub230                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.25   0.509
+  Sub231                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.04   0.512
+  Sub232                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.70   0.509
+  Sub233                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub234                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.41   0.509
+  Sub235                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.07   0.509
+  Sub236                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.03   0.509
+  Sub237                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.03   0.509
+  Sub238                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub239                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.47   0.509
+  Sub240                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.52   0.509
+  Sub241                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.15   0.509
+  Sub242                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.62   0.509
+  Sub243                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.12   0.509
+  Sub244                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.66   0.509
+  Sub245                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub246                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub247                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub248                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.05   0.509
+  Sub249                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.48   0.509
+  Sub250                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.65   0.509
+  Sub251                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.91   0.509
+  Sub252                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     0.68   0.512
+  Sub253                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     0.67   0.512
+  Sub254                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     0.67   0.512
+  Sub255                     2.90       0.00       0.03       0.00       1.46       0.00       1.46        0.00     3.99   0.503
+  Sub256                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     3.90   0.501
+  Sub257                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     4.05   0.501
+  Sub258                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.98   0.501
+  Sub259                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.45   0.501
+  Sub260                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     5.85   0.499
+  Sub261                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     7.38   0.499
+  Sub262                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.32   0.499
+  Sub263                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     3.32   0.499
+  Sub264                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     6.49   0.499
+  Sub265                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     8.50   0.499
+  Sub266                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.32   0.499
+  Sub267                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     5.60   0.499
+  Sub268                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     8.76   0.499
+  Sub269                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     5.26   0.499
+  Sub270                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.73   0.499
+  Sub271                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.28   0.499
+  Sub272                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.86   0.499
+  Sub273                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.41   0.499
+  Sub274                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.08   0.499
+  Sub275                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.08   0.499
+  Sub276                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.60   0.499
+  Sub277                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.60   0.499
+  Sub278                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.01     5.43   0.501
+  Sub279                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.31   0.499
+  Sub280                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.51   0.499
+  Sub281                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.88   0.499
+  Sub282                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     3.89   0.499
+  Sub283                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.95   0.501
+  Sub284                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.21   0.501
+  Sub285                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.97   0.501
+  Sub286                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.62   0.501
+  Sub287                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.03   0.501
+  Sub288                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.58   0.501
+  Sub289                     2.90       0.00       0.03       0.00       1.45       0.00       0.00        0.00     0.00   0.000
+  Sub290                     2.90       0.00       0.03       0.00       0.00       0.00       1.00        0.00     1.39   0.345
+  Sub291                     2.90       0.00       0.03       0.00       0.00       0.00       4.58        0.00     4.15   1.580
+  Sub292                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.53   0.501
+  Sub293                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.05   0.501
+  Sub294                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.21   0.501
+  Sub295                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.68   0.501
+  Sub296                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.83   0.501
+  Sub297                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.02   0.501
+  Sub298                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.85   0.501
+  Sub299                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.58   0.501
+  Sub300                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.82   0.501
+  Sub301                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.69   0.501
+  Sub302                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.63   0.501
+  Sub303                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.58   0.501
+  Sub304                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.76   0.501
+  Sub305                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.49   0.501
+  Sub306                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.10   0.501
+  Sub307                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.74   0.501
+  Sub308                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.77   0.501
+  Sub309                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.55   0.501
+  Sub310                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.74   0.501
+  Sub311                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.74   0.501
+  Sub312                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.74   0.501
+  Sub313                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     0.51   0.499
+  Sub314                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     0.51   0.499
+  Sub315                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     0.51   0.499
+  Sub316                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub317                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub318                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub319                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub320                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub321                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub322                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.60   0.501
+  Sub323                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.61   0.501
+  Sub324                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.61   0.501
+  Sub325                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.61   0.501
+  Sub326                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.63   0.501
+  Sub327                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.63   0.501
+  Sub328                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.63   0.501
+  Sub329                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.63   0.501
+  Sub330                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.65   0.501
+  Sub331                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.65   0.501
+  Sub332                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.65   0.501
+  Sub333                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.65   0.501
+  Sub334                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     5.91   0.499
+  Sub335                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.17   0.501
+  Sub336                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.32   0.499
+  Sub337                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     3.21   0.499
+  Sub338                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.66   0.501
+  Sub339                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     0.64   0.499
+  Sub340                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     2.66   0.501
+  Sub341                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.56   0.501
+  Sub342                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.56   0.501
+  Sub343                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.56   0.501
+  Sub344                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.89   0.501
+  Sub345                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.39   0.509
+  Sub346                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.79   0.509
+  Sub347                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.21   0.509
+  Sub348                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.89   0.509
+  Sub349                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.43   0.509
+  Sub350                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.44   0.509
+  Sub351                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.62   0.509
+  Sub352                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.36   0.509
+  Sub353                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.66   0.512
+  Sub354                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.89   0.512
+  Sub355                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.14   0.512
+  Sub356                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     5.08   0.512
+  Sub357                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.54   0.512
+  Sub358                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     5.16   0.512
+  Sub359                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.49   0.512
+  Sub360                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.02   0.512
+  Sub361                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.89   0.512
+  Sub362                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.88   0.512
+  Sub363                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.52   0.512
+  Sub364                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.42   0.512
+  Sub365                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.20   0.512
+  Sub366                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.34   0.512
+  Sub367                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     5.26   0.512
+  Sub368                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.24   0.512
+  Sub369                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.98   0.509
+  Sub370                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.18   0.509
+  Sub371                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.51   0.509
+  Sub372                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.03   0.509
+  Sub373                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.65   0.509
+  Sub374                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.87   0.509
+  Sub375                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.87   0.509
+  Sub376                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.23   0.509
+  Sub377                     2.90       3.33       0.00       6.23       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub378                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.11   0.509
+  Sub379                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.84   0.509
+  Sub380                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.94   0.509
+  Sub381                     2.90       0.00       0.02       0.43       1.45       0.00      -0.00       -0.00     0.00  -0.000
+  Sub382                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.22   0.509
+  Sub383                     2.90       0.00       0.02       0.25       1.46       0.00       1.17        0.00     2.32   0.403
+  Sub384                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.18   0.509
+  Sub385                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.74   0.509
+  Sub386                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub387                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub388                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub389                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub390                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub391                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.22   0.509
+  Sub392                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.41   0.509
+  Sub393                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.16   0.509
+  Sub394                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.99   0.509
+  Sub395                     2.90       4.12       0.00       7.02       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub396                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.30   0.499
+  Sub397                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.01   0.499
+  Sub398                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     1.31   0.499
+  Sub399                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     3.13   0.499
+  Sub400                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     4.61   0.509
+  Sub401                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.55   0.509
+  Sub402                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.83   0.509
+  Sub403                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     3.82   0.509
+  Sub404                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.50   0.509
+  Sub405                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.90   0.509
+  Sub406                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.98   0.509
+  Sub407                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.02   0.509
+  Sub408                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.59   0.509
+  Sub409                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.62   0.509
+  Sub410                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.40   0.509
+  Sub411                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     0.74   0.500
+  Sub412                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.18   0.509
+  Sub413                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.95   0.509
+  Sub414                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.82   0.509
+  Sub415                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.86   0.509
+  Sub416                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.12   0.509
+  Sub417                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.38   0.509
+  Sub418                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.51   0.509
+  Sub419                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.43   0.509
+  Sub420                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub421                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub422                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub423                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub424                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     1.85   0.512
+  Sub425                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     2.94   0.512
+  Sub426                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.61   0.509
+  Sub427                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     1.89   0.512
+  Sub428                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     2.97   0.512
+  Sub429                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.18   0.512
+  Sub430                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.68   0.512
+  Sub431                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     1.32   0.512
+  Sub432                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.76   0.512
+  Sub433                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     8.58   0.512
+  Sub434                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     3.48   0.512
+  Sub435                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     5.27   0.512
+  Sub436                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     2.99   0.512
+  Sub437                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     0.84   0.512
+  Sub438                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     1.13   0.512
+  Sub439                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.75   0.509
+  Sub442                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub443                     2.90       0.00       0.00       2.90       0.00       0.00       0.00        0.00     0.00   0.000
+  Sub444                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     2.81   0.497
+  Sub445                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     3.39   0.497
+  Sub446                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     3.72   0.497
+  Sub447                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.01     3.62   0.497
+  Sub448                     2.90       0.00       0.03       0.00       1.44       0.00       1.44        0.00     3.04   0.497
+  Sub449                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.15   0.509
+  Sub450                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.80   0.509
+  Sub451                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.75   0.509
+  Sub452                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     4.60   0.512
+  Sub453                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     2.68   0.512
+  Sub454                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     8.65   0.512
+  Sub455                     2.90       0.00       0.02       0.00       1.48       0.00       1.48        0.00     7.20   0.512
+  Sub456                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.49   0.500
+  Sub457                     2.90       0.00       0.03       0.00       1.45       0.00       1.45        0.00     1.04   0.500
+  Sub458                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.33   0.509
+  Sub459                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.48   0.509
+  Sub460                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.75   0.509
+  Sub461                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.49   0.509
+  Sub462                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.58   0.509
+  Sub463                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     0.64   0.509
+  Sub464                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     2.38   0.509
+  Sub465                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.95   0.509
+  Sub466                     2.90       0.00       0.02       0.00       1.47       0.00       1.47        0.00     1.18   0.509
+  
+
+  ***********************
+  LID Performance Summary
+  ***********************
+
+  --------------------------------------------------------------------------------------------------------------------
+                                         Total      Evap     Infil   Surface    Drain    Initial     Final  Continuity
+                                        Inflow      Loss      Loss   Outflow   Outflow   Storage   Storage       Error
+  Subcatchment      LID Control             mm        mm        mm        mm        mm        mm        mm           %
+  --------------------------------------------------------------------------------------------------------------------
+  Sub289            RB-RS1              915.80      0.00      0.00      0.00      0.00      0.00    915.80        0.00
+  Sub290            GR-IN1                2.90      0.03      0.00      0.00      1.00     61.50     62.62        1.16
+  Sub291            GR-EX1                2.90      0.03      0.00      0.00      4.58     13.25      9.04       15.48
+  Sub381            BC-TP1               92.93      0.03     26.40      0.00      0.00     83.08    149.69       -0.06
+  Sub383            BC-TP1               34.07      0.02     26.40      0.00      0.00     83.08     90.86       -0.12
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type       Meters   Meters   Meters  days hr:min      Meters
+  ---------------------------------------------------------------------------------
+  J002                 JUNCTION     0.06     0.20     3.70     0  00:37        0.20
+  J003                 JUNCTION     0.05     0.14     3.74     0  00:37        0.14
+  J004                 JUNCTION     0.04     0.13     3.83     0  00:36        0.13
+  J005                 JUNCTION     0.03     0.08     3.88     0  00:35        0.08
+  J001                 JUNCTION     0.03     0.12     3.72     0  00:35        0.12
+  J006                 JUNCTION     0.07     0.20     3.60     0  00:38        0.20
+  J007                 JUNCTION     0.06     0.17     3.47     0  00:39        0.17
+  J008                 JUNCTION     0.07     0.22     3.42     0  00:40        0.22
+  J009                 JUNCTION     0.08     0.23     3.33     0  00:42        0.23
+  J010                 JUNCTION     0.10     0.25     3.25     0  00:44        0.25
+  J011                 JUNCTION     0.08     0.20     3.10     0  00:46        0.20
+  J012                 JUNCTION     0.08     0.21     3.01     0  00:48        0.21
+  J013                 JUNCTION     0.10     0.24     2.94     0  00:50        0.24
+  J014                 JUNCTION     0.08     0.19     2.79     0  00:52        0.19
+  J015                 JUNCTION     0.09     0.20     2.70     0  00:53        0.20
+  J016                 JUNCTION     0.09     0.20     2.60     0  00:54        0.20
+  J017                 JUNCTION     0.09     0.17     2.47     0  00:55        0.17
+  J018                 JUNCTION     0.04     0.07     2.27     0  00:56        0.07
+  J019                 JUNCTION     0.03     0.06     2.26     0  00:46        0.06
+  J020                 JUNCTION     0.07     0.14     2.44     0  00:45        0.14
+  J021                 JUNCTION     0.09     0.20     2.60     0  00:44        0.20
+  J022                 JUNCTION     0.08     0.21     2.71     0  00:41        0.21
+  J023                 JUNCTION     0.05     0.15     2.75     0  00:38        0.15
+  J025                 JUNCTION     0.03     0.10     2.90     0  00:35        0.10
+  J024                 JUNCTION     0.04     0.14     2.84     0  00:36        0.14
+  J026                 JUNCTION     0.02     0.06     2.76     0  00:36        0.06
+  J027                 JUNCTION     0.03     0.09     2.69     0  00:37        0.09
+  J028                 JUNCTION     0.05     0.13     2.63     0  00:40        0.13
+  J029                 JUNCTION     0.07     0.18     2.58     0  00:37        0.18
+  J030                 JUNCTION     0.10     0.22     2.52     0  00:44        0.22
+  J031                 JUNCTION     0.03     0.06     2.26     0  00:35        0.05
+  J_out01              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out02              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out03              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out04              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out05              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out06              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out07              JUNCTION     0.01     0.05     2.05     0  00:35        0.05
+  J_out08              JUNCTION     0.01     0.03     2.03     0  00:35        0.02
+  J_out09              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out10              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out11              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out12              JUNCTION     0.01     0.04     2.04     0  00:35        0.03
+  J_out13              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out14              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out15              JUNCTION     0.01     0.05     2.05     0  00:35        0.05
+  J_out16              JUNCTION     0.01     0.03     2.03     0  00:35        0.03
+  J_out17              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out18              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out19              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out20              JUNCTION     0.02     0.07     2.07     0  00:35        0.07
+  J_out21              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out22              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out23              JUNCTION     0.01     0.04     2.04     0  00:35        0.04
+  J_out24              JUNCTION     0.02     0.05     2.05     0  00:35        0.05
+  J_out25              JUNCTION     0.01     0.02     2.02     0  00:35        0.02
+  JA_out26             JUNCTION     0.03     0.10     1.60     0  00:35        0.10
+  JA_out27             JUNCTION     0.06     0.14     1.64     0  00:35        0.14
+  JA_out28             JUNCTION     0.05     0.15     1.65     0  00:35        0.14
+  JE_out               JUNCTION     0.07     0.19     1.29     0  00:35        0.18
+  Outfall1             OUTFALL      0.07     0.19     1.19     0  00:35        0.17
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           LPS      LPS  days hr:min    10^6 ltr    10^6 ltr     Percent
+  -------------------------------------------------------------------------------------------------
+  J002                 JUNCTION      9.06    36.36     0  00:35     0.00492      0.0505       0.163
+  J003                 JUNCTION     11.86    22.40     0  00:35      0.0116      0.0346       0.009
+  J004                 JUNCTION     14.20    19.80     0  00:35      0.0133       0.023       0.038
+  J005                 JUNCTION      7.85     7.85     0  00:35     0.00971     0.00971      -0.114
+  J001                 JUNCTION     17.13    17.13     0  00:35       0.011       0.011      -0.627
+  J006                 JUNCTION     10.57    33.91     0  00:37      0.0103      0.0607       0.031
+  J007                 JUNCTION      4.68    33.81     0  00:38     0.00265      0.0633       0.010
+  J008                 JUNCTION      3.14    33.88     0  00:39     0.00166       0.065       0.032
+  J009                 JUNCTION      7.25    34.74     0  00:40     0.00453      0.0695       0.005
+  J010                 JUNCTION      4.54    32.86     0  00:41      0.0024      0.0719       0.149
+  J011                 JUNCTION     10.43    31.14     0  00:44     0.00561      0.0774       0.069
+  J012                 JUNCTION      5.82    30.49     0  00:46      0.0036       0.081       0.049
+  J013                 JUNCTION      4.88    29.64     0  00:47     0.00259      0.0835       0.188
+  J014                 JUNCTION     10.45    29.47     0  00:50     0.00576      0.0891       0.094
+  J015                 JUNCTION      6.31    29.35     0  00:52     0.00434      0.0934       0.085
+  J016                 JUNCTION      6.59    29.38     0  00:53     0.00349      0.0968       0.125
+  J017                 JUNCTION     11.15    29.92     0  00:55     0.00771       0.104       0.107
+  J018                 JUNCTION      4.20    30.06     0  00:55     0.00222       0.106       0.018
+  J019                 JUNCTION      0.00    20.00     0  00:45           0      0.0681       0.027
+  J020                 JUNCTION     13.41    22.08     0  00:35     0.00748      0.0682       0.211
+  J021                 JUNCTION     21.82    29.93     0  00:35      0.0187       0.061       0.472
+  J022                 JUNCTION     22.59    30.34     0  00:35      0.0183      0.0424       0.125
+  J023                 JUNCTION      5.14    18.81     0  00:36     0.00354       0.024       0.002
+  J025                 JUNCTION     11.91    11.91     0  00:35     0.00786     0.00786      -0.312
+  J024                 JUNCTION     17.03    23.42     0  00:35      0.0126      0.0205      -0.080
+  J026                 JUNCTION      5.63     5.63     0  00:35     0.00322     0.00322      -0.552
+  J027                 JUNCTION     12.80    14.44     0  00:35     0.00816      0.0114      -0.012
+  J028                 JUNCTION     12.36    16.74     0  00:35     0.00891      0.0203       0.445
+  J029                 JUNCTION     32.56    37.76     0  00:35      0.0232      0.0434      -0.304
+  J030                 JUNCTION      0.00    20.66     0  00:38           0      0.0436       1.365
+  J031                 JUNCTION     20.85    24.90     0  00:35      0.0135      0.0565      -0.143
+  J_out01              JUNCTION      6.19     6.19     0  00:35     0.00523     0.00523      -0.011
+  J_out02              JUNCTION      6.05     6.05     0  00:35     0.00534     0.00534      -0.010
+  J_out03              JUNCTION      5.58     5.58     0  00:35     0.00506     0.00506      -0.010
+  J_out04              JUNCTION      8.89     8.89     0  00:35     0.00734     0.00734      -0.013
+  J_out05              JUNCTION      6.49     6.49     0  00:35     0.00544     0.00544      -0.011
+  J_out06              JUNCTION      7.03     7.03     0  00:35     0.00571     0.00571      -0.012
+  J_out07              JUNCTION     13.22    13.22     0  00:35      0.0125      0.0125      -0.013
+  J_out08              JUNCTION      3.23     3.23     0  00:35     0.00242     0.00242      -0.011
+  J_out09              JUNCTION      4.62     4.62     0  00:35     0.00489     0.00489      -0.008
+  J_out10              JUNCTION      6.10     6.10     0  00:35     0.00394     0.00394      -0.015
+  J_out11              JUNCTION      5.06     5.06     0  00:35     0.00327     0.00327      -0.014
+  J_out12              JUNCTION      6.39     6.39     0  00:35     0.00413     0.00413      -0.015
+  J_out13              JUNCTION      3.27     3.27     0  00:35     0.00276     0.00276      -0.010
+  J_out14              JUNCTION      8.98     8.98     0  00:35     0.00842     0.00842      -0.010
+  J_out15              JUNCTION     13.92    13.92     0  00:35     0.00762     0.00762      -0.025
+  J_out16              JUNCTION      5.54     5.54     0  00:35     0.00573     0.00573      -0.008
+  J_out17              JUNCTION      8.23     8.23     0  00:35     0.00808     0.00808      -0.008
+  J_out18              JUNCTION      8.06     8.06     0  00:35     0.00846     0.00846      -0.007
+  J_out19              JUNCTION      8.25     8.25     0  00:35     0.00842     0.00842      -0.008
+  J_out20              JUNCTION     22.88    22.88     0  00:35      0.0242      0.0242      -0.015
+  J_out21              JUNCTION      6.67     6.67     0  00:35     0.00807     0.00807      -0.007
+  J_out22              JUNCTION      8.88     8.88     0  00:35     0.00595     0.00595      -0.017
+  J_out23              JUNCTION      7.27     7.27     0  00:35     0.00746     0.00746      -0.009
+  J_out24              JUNCTION     15.77    15.77     0  00:35      0.0205      0.0205      -0.008
+  J_out25              JUNCTION      1.55     1.55     0  00:35     0.00184     0.00184      -0.005
+  JA_out26             JUNCTION      0.00    52.54     0  00:35           0      0.0467       0.001
+  JA_out27             JUNCTION      0.00    91.57     0  00:35           0       0.193       0.018
+  JA_out28             JUNCTION      6.25   101.97     0  00:35     0.00438       0.179       0.040
+  JE_out               JUNCTION      0.00   232.55     0  00:35           0       0.418       0.021
+  Outfall1             OUTFALL       0.00   237.49     0  00:35           0       0.418       0.000
+  
+  
+  **********************
+  Node Surcharge Summary
+  **********************
+  
+  No nodes were surcharged.
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  -----------------------------------------------------------
+                         Flow       Avg       Max       Total
+                         Freq      Flow      Flow      Volume
+  Outfall Node           Pcnt       LPS       LPS    10^6 ltr
+  -----------------------------------------------------------
+  Outfall1              99.94     41.04    237.49       0.418
+  -----------------------------------------------------------
+  System                99.94     41.04    237.49       0.418
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          LPS  days hr:min     m/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  C_out01              CONDUIT      6.12     0  00:35      0.36    0.03    0.30
+  C_out02              CONDUIT      5.99     0  00:35      0.35    0.03    0.30
+  C_out03              CONDUIT      5.53     0  00:35      0.33    0.03    0.30
+  C_out04              CONDUIT      8.81     0  00:35      0.49    0.04    0.31
+  C_out05              CONDUIT      6.42     0  00:35      0.37    0.03    0.30
+  C_out06              CONDUIT      6.96     0  00:35      0.40    0.03    0.30
+  C_out07              CONDUIT     13.15     0  00:35      0.68    0.06    0.33
+  C_out08              CONDUIT      3.17     0  00:35      0.20    0.01    0.29
+  C_out09              CONDUIT      4.58     0  00:35      0.28    0.02    0.29
+  C_out10              CONDUIT      6.02     0  00:35      0.35    0.03    0.30
+  C_out11              CONDUIT      4.99     0  00:35      0.30    0.02    0.30
+  C_out12              CONDUIT      6.31     0  00:35      0.36    0.03    0.30
+  C_out13              CONDUIT      3.22     0  00:35      0.20    0.01    0.29
+  C_out14              CONDUIT      8.91     0  00:35      0.68    0.04    0.24
+  C_out15              CONDUIT     13.81     0  00:35      0.96    0.06    0.26
+  C_out16              CONDUIT      5.49     0  00:35      0.46    0.03    0.23
+  C_out17              CONDUIT      8.16     0  00:35      0.64    0.04    0.24
+  C_out18              CONDUIT      7.99     0  00:35      0.63    0.04    0.24
+  C_out19              CONDUIT      8.18     0  00:35      0.64    0.04    0.24
+  C_out20              CONDUIT     22.80     0  00:35      1.08    0.11    0.34
+  C_out21              CONDUIT      6.63     0  00:35      0.39    0.03    0.30
+  C_out22              CONDUIT      8.79     0  00:35      0.49    0.04    0.30
+  C_out23              CONDUIT      7.21     0  00:35      0.42    0.03    0.30
+  C_out24              CONDUIT     15.73     0  00:35      0.80    0.07    0.33
+  C_out25              CONDUIT      1.52     0  00:35      0.10    0.01    0.27
+  C_out26              CONDUIT     50.38     0  00:35      1.47    0.26    0.49
+  C_out27              CONDUIT     89.37     0  00:35      2.26    0.46    0.55
+  C_out28              CONDUIT     93.94     0  00:35      2.34    0.49    0.56
+  C_out29              CONDUIT     30.05     0  00:56      2.01    0.12    0.33
+  C_out30              CONDUIT     20.00     0  00:46      1.36    0.08    0.31
+  C_out31              CONDUIT     20.64     0  00:35      1.12    0.08    0.33
+  C001                 CONDUIT     12.46     0  00:35      0.43    0.34    0.49
+  C002                 CONDUIT     20.29     0  00:37      0.52    0.42    0.55
+  C003                 CONDUIT     14.11     0  00:36      0.46    0.41    0.45
+  C004                 CONDUIT      6.41     0  00:35      0.29    0.17    0.36
+  C005                 CONDUIT     28.73     0  00:37      0.59    0.76    0.66
+  C006                 CONDUIT     32.74     0  00:38      0.72    0.79    0.61
+  C007                 CONDUIT     33.26     0  00:39      0.72    0.60    0.64
+  C008                 CONDUIT     33.06     0  00:40      0.62    0.88    0.74
+  C009                 CONDUIT     32.37     0  00:41      0.58    0.90    0.80
+  C010                 CONDUIT     30.51     0  00:44      0.54    1.12    0.75
+  C011                 CONDUIT     30.06     0  00:46      0.61    0.79    0.67
+  C012                 CONDUIT     29.40     0  00:47      0.55    0.77    0.74
+  C013                 CONDUIT     28.93     0  00:50      0.54    1.02    0.71
+  C014                 CONDUIT     28.89     0  00:52      0.60    0.73    0.65
+  C015                 CONDUIT     29.06     0  00:53      0.59    0.78    0.66
+  C016                 CONDUIT     29.15     0  00:55      0.64    0.77    0.61
+  C017                 CONDUIT     29.85     0  00:55      1.14    0.69    0.40
+  C018                 CONDUIT     20.00     0  00:45      1.00    0.47    0.33
+  C019                 CONDUIT     19.31     0  00:44      0.47    0.76    0.57
+  C020                 CONDUIT     17.12     0  00:41      0.34    0.85    0.68
+  C021                 CONDUIT     14.93     0  00:38      0.37    0.48    0.58
+  C022                 CONDUIT     16.51     0  00:36      0.54    0.42    0.46
+  C023                 CONDUIT      7.77     0  00:35      0.31    0.23    0.39
+  C025                 CONDUIT      2.19     0  00:36      0.16    0.08    0.25
+  C026                 CONDUIT      6.18     0  00:37      0.29    0.20    0.35
+  C027                 CONDUIT      9.05     0  00:40      0.26    0.36    0.50
+  C028                 CONDUIT     20.66     0  00:38      0.51    0.68    0.63
+  C029                 CONDUIT     14.31     0  00:44      0.47    0.63    0.45
+  C_out_end            CONDUIT    237.49     0  00:35      2.34    0.08    0.19
+  
+  
+  ***************************
+  Flow Classification Summary
+  ***************************
+  
+  -------------------------------------------------------------------------------------
+                      Adjusted    ---------- Fraction of Time in Flow Class ---------- 
+                       /Actual         Up    Down  Sub   Sup   Up    Down  Norm  Inlet 
+  Conduit               Length    Dry  Dry   Dry   Crit  Crit  Crit  Crit  Ltd   Ctrl  
+  -------------------------------------------------------------------------------------
+  C_out01                 1.00   0.00  0.06  0.00  0.94  0.00  0.00  0.00  1.00  0.00
+  C_out02                 1.00   0.00  0.10  0.00  0.90  0.00  0.00  0.00  1.00  0.00
+  C_out03                 1.00   0.00  0.10  0.00  0.90  0.00  0.00  0.00  1.00  0.00
+  C_out04                 1.00   0.00  0.09  0.00  0.90  0.00  0.00  0.00  1.00  0.00
+  C_out05                 1.00   0.00  0.10  0.00  0.90  0.00  0.00  0.00  1.00  0.00
+  C_out06                 1.00   0.00  0.09  0.00  0.91  0.00  0.00  0.00  1.00  0.00
+  C_out07                 1.00   0.00  0.08  0.00  0.91  0.00  0.00  0.00  1.00  0.00
+  C_out08                 1.00   0.00  0.10  0.00  0.90  0.00  0.00  0.00  1.00  0.00
+  C_out09                 1.00   0.00  0.08  0.00  0.92  0.00  0.00  0.00  1.00  0.00
+  C_out10                 1.00   0.00  0.22  0.00  0.78  0.00  0.00  0.00  1.00  0.00
+  C_out11                 1.00   0.00  0.22  0.00  0.78  0.00  0.00  0.00  1.00  0.00
+  C_out12                 1.00   0.00  0.22  0.00  0.78  0.00  0.00  0.00  1.00  0.00
+  C_out13                 1.00   0.00  0.09  0.00  0.91  0.00  0.00  0.00  1.00  0.00
+  C_out14                 1.00   0.04  0.06  0.00  0.90  0.01  0.00  0.00  1.00  0.00
+  C_out15                 1.00   0.04  0.19  0.00  0.72  0.05  0.00  0.00  0.99  0.00
+  C_out16                 1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  C_out17                 1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  C_out18                 1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  C_out19                 1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  C_out20                 1.00   0.00  0.04  0.00  0.81  0.14  0.00  0.00  0.99  0.00
+  C_out21                 1.00   0.00  0.05  0.00  0.95  0.00  0.00  0.00  1.00  0.00
+  C_out22                 1.00   0.00  0.16  0.00  0.83  0.00  0.00  0.00  1.00  0.00
+  C_out23                 1.00   0.00  0.06  0.00  0.94  0.00  0.00  0.00  1.00  0.00
+  C_out24                 1.00   0.00  0.04  0.00  0.90  0.05  0.00  0.00  1.00  0.00
+  C_out25                 1.00   0.00  0.09  0.00  0.91  0.00  0.00  0.00  1.00  0.00
+  C_out26                 1.00   0.00  0.03  0.00  0.78  0.19  0.00  0.00  0.99  0.00
+  C_out27                 1.00   0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.99  0.00
+  C_out28                 1.00   0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.99  0.00
+  C_out29                 1.00   0.00  0.00  0.00  0.08  0.92  0.00  0.00  1.00  0.00
+  C_out30                 1.00   0.00  0.00  0.00  0.11  0.89  0.00  0.00  1.00  0.00
+  C_out31                 1.00   0.00  0.00  0.00  0.07  0.93  0.00  0.00  0.99  0.00
+  C001                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.93  0.00
+  C002                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.98  0.00
+  C003                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.93  0.00
+  C004                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  C005                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.93  0.00
+  C006                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.00  0.00
+  C007                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.92  0.00
+  C008                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  C009                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.82  0.00
+  C010                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.06  0.00
+  C011                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.86  0.00
+  C012                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.83  0.00
+  C013                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.07  0.00
+  C014                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.92  0.00
+  C015                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.83  0.00
+  C016                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.55  0.00
+  C017                    1.00   0.00  0.00  0.00  0.26  0.74  0.00  0.00  0.00  0.00
+  C018                    1.00   0.00  0.00  0.00  0.31  0.69  0.00  0.00  0.00  0.00
+  C019                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.33  0.00
+  C020                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.80  0.00
+  C021                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.95  0.00
+  C022                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.91  0.00
+  C023                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.99  0.00
+  C025                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  1.00  0.00
+  C026                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.97  0.00
+  C027                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.98  0.00
+  C028                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.77  0.00
+  C029                    1.00   0.00  0.00  0.00  1.00  0.00  0.00  0.00  0.06  0.00
+  C_out_end               1.00   0.00  0.00  0.00  0.00  1.00  0.00  0.00  0.35  0.00
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  ----------------------------------------------------------------------------
+                                                           Hours        Hours 
+                         --------- Hours Full --------   Above Full   Capacity
+  Conduit                Both Ends  Upstream  Dnstream   Normal Flow   Limited
+  ----------------------------------------------------------------------------
+  C010                        0.01      0.01      0.01      0.12         0.01
+  C013                        0.01      0.01      0.01      0.07         0.01
+  
+
+  Analysis begun on:  Mon Jul 26 17:14:31 2021
+  Analysis ended on:  Mon Jul 26 17:14:31 2021
+  Total elapsed time: < 1 sec
