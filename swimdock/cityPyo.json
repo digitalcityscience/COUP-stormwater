@@ -1,0 +1,9 @@
+ {
+  "url": "http://citypyo-api:5000/",
+  "users": [
+        {
+            "username": "testuser",
+            "password": "blubb"
+        }
+    ]
+}
