@@ -42,7 +42,7 @@ def compute_complex_task(complex_task: dict) -> dict:
     # time.sleep(duration)
     result = perform_swmm_analysis(complex_task)
 
-    return {"sum": result}
+    return result
 
 
 @signals.task_postrun.connect
