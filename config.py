@@ -27,3 +27,6 @@ result_backend = 'redis://:{}@{}:{}/1'.format(
 )
 
 enable_utc = True
+
+# Queue config
+task_default_queue = 'swimdock'
