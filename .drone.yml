@@ -1,12 +1,12 @@
 kind: pipeline
 name: pipeline
 steps:
-- name: publish
+- name: build and publish
   image: plugins/docker
   settings:
     repo:
       from_secret: docker_repository
-    tags: swimdock-${DRONE_BRANCH}
+    tags: water-${DRONE_BRANCH}
     username:
       from_secret: docker_username
     password:
@@ -15,12 +15,12 @@ steps:
     status: [ success ]
     branch: [ master ]
 
-- name: publish tag
+- name: tag
   image: plugins/docker
   settings:
     repo:
       from_secret: docker_repository
-    tags: swimdock-${DRONE_TAG}
+    tags: water-${DRONE_TAG}
     username:
       from_secret: docker_username
     password:
@@ -30,12 +30,12 @@ steps:
     event:
       - tag
 
-- name: deploy api
+- name: deploy
   image: quving/drone-rancher-cicd:latest
   settings:
     stamp: ${DRONE_COMMIT}
-    kubernetes_deployment: swimdock-api,swimdock-worker
-    kubernetes_namespace: testing
+    kubernetes_deployment: water-api,water-worker
+    kubernetes_namespace: ${DRONE_BRANCH}
     rancher_url:
       from_secret: rancher_url
     rancher_token:
