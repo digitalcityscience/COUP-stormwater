@@ -7,8 +7,7 @@ from swmm.toolkit import solver
 
 from swimdock.make_inp_file import make_inp_file
 from swimdock.make_result_geojson import get_result_geojson
-from swimdock.cityPyo import save_subcatchments
-
+import swimdock.cityPyo as cp
 
 known_hashes = {}
 
@@ -20,7 +19,9 @@ data_dir = './data/'
 def perform_swmm_analysis(user_input) -> dict:
     print("making input file")
     make_inp_file(user_input)
-    save_subcatchments(user_input["city_pyo_user"])
+
+    cityPyo = cp.CityPyo() 
+    cityPyo.save_subcatchments(user_input["city_pyo_user"])
 
     print("computing")
     solver.swmm_run('./data/scenario.inp', './data/scenario.rpt', './data/scenario.out')

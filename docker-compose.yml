@@ -13,7 +13,7 @@ services:
     build:
       context: .
     ports:
-      - 5000:5000
+      - 5002:5000
     restart: "always"
     environment:
       - REDIS_HOST=redis
