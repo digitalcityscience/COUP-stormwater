@@ -13,21 +13,19 @@ class CityPyo:
         - Posts data to cityPyo
     """
     def __init__(self):
-        self.url = os.getenv('CITY_PYO')
+        self.url = os.getenv('CITY_PYO', 'http://localhost:5000')
         if not self.url:
             raise Exception("Please specify CITY_PYO environment variable")
         
 
-    # save subcatchments geometries as geojson to data folder
-    def save_subcatchments(self, user_id):
+    # returns subcatchments geojson as dict
+    def get_subcatchments(self, user_id):
         subcatchments = self.get_layer_for_user(user_id, "subcatchments")
         if not subcatchments:
             # no subcatchments no calculation :p
             raise FileNotFoundError("could not find subcatchments on %s for user %s" % (self.url, self.user_id))
 
-        # save geojson with subcatchments to disk
-        with open("data/subcatchments.json", "w") as fp:
-            json.dump(subcatchments, fp)
+        return subcatchments
         
 
     def get_layer_for_user(self, user_id, layer_name, recursive_iteration=0):

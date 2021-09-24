@@ -4,6 +4,7 @@ from celery.result import AsyncResult, GroupResult
 from flask import Flask, request, abort, make_response, jsonify
 
 import services
+import tasks
 from mycelery import app as celery_app
 
 app = Flask(__name__)
@@ -25,47 +26,32 @@ def bad_request(message: str):
     )
 
 
-@app.route("/grouptasks", methods=['POST'])
-def process_grouptask():
+# process calculation requests 
+@app.route("/task", methods=['POST'])
+def process_swimdocktask():
     # Validate request
-    if not request.json and not 'tasks' in request.json:
+    if not request.json:
         abort(400)
 
-    # Parse requests
+    # Handle requests
     try:
-        complex_tasks = request.json['tasks']
-        group_result = services.compute(complex_tasks=complex_tasks)
-        result_ids = [result.id for result in group_result.results]
-        response = {'grouptaskId': group_result.id, 'taskIds': result_ids}
+        single_result = tasks.compute_task.delay(*services.get_calculation_input(request.json))
+        response = {'taskId': single_result.id}
 
         # return jsonify(response), HTTPStatus.OK
         return make_response(
             jsonify(response),
             HTTPStatus.OK,
         )
-    except KeyError:
+    except KeyError as e:
+        print("THIS IS THE ERROR %s " % e)
+        print("THIS IS THE request %s " % request)
+
+        return make_response(
+            jsonify(e),
+            HTTPStatus.OK,
+        )
         return bad_request("Payload not correctly structured.")
-
-
-@app.route("/grouptasks/<grouptask_id>", methods=['GET'])
-def get_grouptask(grouptask_id: str):
-    group_result = GroupResult.restore(grouptask_id, app=celery_app)
-
-    # Fields available
-    # https://docs.celeryproject.org/en/stable/reference/celery.result.html#celery.result.ResultSet
-    response = {
-        'grouptaskId': group_result.id,
-        'tasksCompleted': group_result.completed_count(),
-        'tasksTotal': len(group_result.results),
-        'grouptaskProcessed': group_result.ready(),
-        'grouptaskSucceeded': group_result.successful(),
-        'results': [result.get() for result in group_result.results if result.ready()]
-    }
-
-    return make_response(
-        response,
-        HTTPStatus.OK,
-    )
 
 
 @app.route("/tasks/<task_id>", methods=['GET'])

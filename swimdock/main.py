@@ -15,13 +15,18 @@ cwd = os.getcwd()
 data_dir = './data/'
 
 
-# creates an input file from user_input and run the simulation
-def perform_swmm_analysis(user_input) -> dict:
-    print("making input file")
-    make_inp_file(user_input)
+def save_subcatchments(subcatchments_geojson):
+    # save geojson with subcatchments to disk
+    with open("data/subcatchments.json", "w") as fp:
+        json.dump(subcatchments_geojson, fp)
 
-    cityPyo = cp.CityPyo() 
-    cityPyo.save_subcatchments(user_input["city_pyo_user"])
+
+# creates an input file from user_input and run the simulation
+def perform_swmm_analysis(calculation_settings, subcatchments) -> dict:
+    print("making input file")
+    make_inp_file(calculation_settings)
+    
+    save_subcatchments(subcatchments)
 
     print("computing")
     solver.swmm_run('./data/scenario.inp', './data/scenario.rpt', './data/scenario.out')
