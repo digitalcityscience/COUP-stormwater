@@ -6,7 +6,7 @@ steps:
   settings:
     repo:
       from_secret: docker_repository
-    tags: water-${DRONE_BRANCH}
+    tags: ${DRONE_BRANCH}
     username:
       from_secret: docker_username
     password:
