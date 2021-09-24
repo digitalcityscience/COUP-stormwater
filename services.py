@@ -30,7 +30,9 @@ def get_calculation_settings(scenario):
 
     return {
         "model_updates": scenario["model_updates"],
-        "rain_event": scenario["rain_event"]
+        "return_period": scenario["return_period"],
+        "flow_path": scenario["flow_path"],
+        "roofs": scenario["roofs"]
     }
 
 

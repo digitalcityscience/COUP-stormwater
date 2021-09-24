@@ -25,7 +25,6 @@ def save_subcatchments(subcatchments_geojson):
 def perform_swmm_analysis(calculation_settings, subcatchments) -> dict:
     print("making input file")
     make_inp_file(calculation_settings)
-    
     save_subcatchments(subcatchments)
 
     print("computing")
