@@ -7,6 +7,8 @@ steps:
     repo:
       from_secret: docker_repository
     tags: ${DRONE_BRANCH}
+    registry:
+      from_secret: docker_registry
     username:
       from_secret: docker_username
     password:
@@ -20,7 +22,9 @@ steps:
   settings:
     repo:
       from_secret: docker_repository
-    tags: water-${DRONE_TAG}
+    tags: ${DRONE_TAG}
+    registry:
+      from_secret: docker_registry
     username:
       from_secret: docker_username
     password:
