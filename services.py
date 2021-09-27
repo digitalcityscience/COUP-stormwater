@@ -28,8 +28,14 @@ def get_calculation_input(complex_task):
 def get_calculation_settings(scenario):
     print("scenario", scenario)
 
+    try:
+        model_updates = scenario["model_updates"]
+    except KeyError:
+        # no model updates 
+        model_updates = []
+
     return {
-        "model_updates": scenario["model_updates"],
+        "model_updates": model_updates,
         "return_period": scenario["return_period"],
         "flow_path": scenario["flow_path"],
         "roofs": scenario["roofs"]
