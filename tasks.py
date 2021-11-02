@@ -6,7 +6,7 @@ from celery.utils.log import get_task_logger
 
 from cache import Cache
 from mycelery import app
-from services import calculate_and_return_result, get_cache_key, is_valid_md5
+from services import calculate_and_return_result, get_cache_key_compute_task, is_valid_md5
 
 
 logger = get_task_logger(__name__)
@@ -40,6 +40,6 @@ def task_postrun_handler(task_id, task, *args, **kwargs):
     if is_valid_md5(args[0]) and is_valid_md5(args[1]):
         # Cache only succeeded tasks
         if state == "SUCCESS":
-            key = get_cache_key(scenario_hash=args[0], subcatchments_hash=args[1])
+            key = get_cache_key_compute_task(scenario_hash=args[0], subcatchments_hash=args[1])
             cache.save(key=key, value=result)
             print("cached result with key %s" % key)

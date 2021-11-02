@@ -61,6 +61,6 @@ def is_valid_md5(checkme):
     return False
 
 
-def get_cache_key(**kwargs):
+def get_cache_key_compute_task(**kwargs):
     return kwargs["scenario_hash"] + "_" + kwargs["subcatchments_hash"]
 
