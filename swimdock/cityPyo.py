@@ -23,7 +23,7 @@ class CityPyo:
         subcatchments = self.get_layer_for_user(user_id, "subcatchments")
         if not subcatchments:
             # no subcatchments no calculation :p
-            raise FileNotFoundError("could not find subcatchments on %s for user %s" % (self.url, self.user_id))
+            raise FileNotFoundError("could not find subcatchments on %s for user %s" % (self.url, user_id))
 
         return subcatchments
         
@@ -41,7 +41,7 @@ class CityPyo:
                 return response.json()
             else:
                 print("could not get from cityPyo")
-                print("wanted to get layer: ", layer_name)
+                print("wanted to get layer: ",   layer_name)
                 print("Error code", response.status_code)
                 return None
         # exit on request exception (cityIO down)
