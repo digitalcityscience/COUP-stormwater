@@ -33,9 +33,24 @@ def verify_password(username, password):
         return username
 
 
+@auth.error_handler
+def auth_error(status):
+    return make_response(
+        jsonify({'error': 'Access denied.'}),
+        status
+    )
+
+
 @app.route('/')
-@auth.login_required
 @app.errorhandler(404)
+def not_found(message: str):
+    return make_response(
+        jsonify({'error': message}),
+        404
+    )
+
+
+@app.errorhandler(401)
 def not_found(message: str):
     return make_response(
         jsonify({'error': message}),
