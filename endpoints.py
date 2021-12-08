@@ -19,10 +19,11 @@ Compress(app)
 
 auth = HTTPBasicAuth()
 
-API_PASSWORD = os.getenv('API_PASSWORD', 'SB8NN63Fhf9g1oLX4IPD27tU')
+CLIENT_ID = os.getenv('CLIENT_ID', 'Z8DE51BIRSW9oIdJ23Y6Vu4R')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET', 'SB8NN63Fhf9g1oLX4IPD27tU')
 
 users = {
-    "api": generate_password_hash(API_PASSWORD),
+    CLIENT_ID: generate_password_hash(CLIENT_SECRET)
 }
 
 
