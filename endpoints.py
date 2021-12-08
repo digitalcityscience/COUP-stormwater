@@ -1,22 +1,40 @@
+import os
 from http import HTTPStatus
 
-from celery.result import AsyncResult, GroupResult
+from celery.result import AsyncResult
 from flask import Flask, request, abort, make_response, jsonify
+from flask_compress import Compress
+from flask_cors import CORS
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 
 import services
 import tasks
 from mycelery import app as celery_app
-
-from flask_cors import CORS, cross_origin
-from flask_compress import Compress
-
 
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 Compress(app)
 
+auth = HTTPBasicAuth()
 
+API_PASSWORD = os.getenv('API_PASSWORD', 'SB8NN63Fhf9g1oLX4IPD27tU')
+
+users = {
+    "api": generate_password_hash(API_PASSWORD),
+}
+
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and \
+            check_password_hash(users.get(username), password):
+        return username
+
+
+@app.route('/')
+@auth.login_required
 @app.errorhandler(404)
 def not_found(message: str):
     return make_response(
@@ -59,6 +77,15 @@ def process_swimdocktask():
             HTTPStatus.OK,
         )
         return bad_request("Payload not correctly structured.")
+
+
+@app.route("/auth-test", methods=['GET'])
+@auth.login_required
+def auth_test():
+    return make_response(
+        {'response': 'Wuhuu! Du bist berechtigt, das hier zu lesen!'},
+        HTTPStatus.OK
+    )
 
 
 @app.route("/tasks/<task_id>", methods=['GET'])
