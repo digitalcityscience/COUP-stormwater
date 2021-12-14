@@ -19,19 +19,19 @@ Compress(app)
 
 auth = HTTPBasicAuth()
 
-CLIENT_ID = os.getenv('CLIENT_ID', 'Z8DE51BIRSW9oIdJ23Y6Vu4R')
-CLIENT_SECRET = os.getenv('CLIENT_SECRET', 'SB8NN63Fhf9g1oLX4IPD27tU')
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_PASSWORD = os.getenv('CLIENT_PASSWORD')
 
-users = {
-    CLIENT_ID: generate_password_hash(CLIENT_SECRET)
+pw_hashes = {
+    CLIENT_ID: generate_password_hash(CLIENT_PASSWORD)
 }
 
 
 @auth.verify_password
-def verify_password(username, password):
-    if username in users and \
-            check_password_hash(users.get(username), password):
-        return username
+def verify_password(client_id, password):
+    if client_id in pw_hashes and \
+            check_password_hash(pw_hashes.get(client_id), password):
+        return client_id
 
 
 @auth.error_handler
@@ -69,6 +69,7 @@ def bad_request(message: str):
 
 # process calculation requests 
 @app.route("/task", methods=['POST'])
+@auth.login_required
 def process_swimdocktask():
     # Validate request
     if not request.json:
@@ -95,16 +96,9 @@ def process_swimdocktask():
         return bad_request("Payload not correctly structured.")
 
 
-@app.route("/auth-test", methods=['GET'])
-@auth.login_required
-def auth_test():
-    return make_response(
-        {'response': 'Wuhuu! Du bist berechtigt, das hier zu lesen!'},
-        HTTPStatus.OK
-    )
-
 
 @app.route("/tasks/<task_id>", methods=['GET'])
+@auth.login_required
 def get_task(task_id: str):
     async_result = AsyncResult(task_id, app=celery_app)
 
