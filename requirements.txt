@@ -1,6 +1,7 @@
 aenum==2.2.6
 amqp==5.0.6
 billiard==3.6.4.0
+Brotli==1.0.9
 celery==5.1.2
 certifi==2021.5.30
 chardet==4.0.0
@@ -10,8 +11,9 @@ click-plugins==1.1.1
 click-repl==0.2.0
 decorator==4.4.2
 Flask==2.0.1
+Flask-Compress==1.10.1
 Flask-Cors==3.0.10
-flask_compress==1.10.1
+Flask-HTTPAuth==4.5.0
 geojson==2.5.0
 gunicorn==20.1.0
 idna==2.10

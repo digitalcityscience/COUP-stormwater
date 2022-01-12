@@ -1,23 +1,57 @@
+import os
 from http import HTTPStatus
 
-from celery.result import AsyncResult, GroupResult
+from celery.result import AsyncResult
 from flask import Flask, request, abort, make_response, jsonify
+from flask_compress import Compress
+from flask_cors import CORS
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 
 import services
 import tasks
 from mycelery import app as celery_app
-
-from flask_cors import CORS, cross_origin
-from flask_compress import Compress
-
 
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 Compress(app)
 
+auth = HTTPBasicAuth()
 
+CLIENT_ID = os.getenv('CLIENT_ID')
+CLIENT_PASSWORD = os.getenv('CLIENT_PASSWORD')
+
+pw_hashes = {
+    CLIENT_ID: generate_password_hash(CLIENT_PASSWORD)
+}
+
+
+@auth.verify_password
+def verify_password(client_id, password):
+    if client_id in pw_hashes and \
+            check_password_hash(pw_hashes.get(client_id), password):
+        return client_id
+
+
+@auth.error_handler
+def auth_error(status):
+    return make_response(
+        jsonify({'error': 'Access denied.'}),
+        status
+    )
+
+
+@app.route('/')
 @app.errorhandler(404)
+def not_found(message: str):
+    return make_response(
+        jsonify({'error': message}),
+        404
+    )
+
+
+@app.errorhandler(401)
 def not_found(message: str):
     return make_response(
         jsonify({'error': message}),
@@ -35,6 +69,7 @@ def bad_request(message: str):
 
 # process calculation requests 
 @app.route("/task", methods=['POST'])
+@auth.login_required
 def process_swimdocktask():
     # Validate request
     if not request.json:
@@ -61,7 +96,9 @@ def process_swimdocktask():
         return bad_request("Payload not correctly structured.")
 
 
+
 @app.route("/tasks/<task_id>", methods=['GET'])
+@auth.login_required
 def get_task(task_id: str):
     async_result = AsyncResult(task_id, app=celery_app)
 
