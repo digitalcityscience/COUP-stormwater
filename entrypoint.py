@@ -5,4 +5,4 @@ from endpoints import app
 # informations. For production please use it with gunicorn (see entrypoint.sh)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
