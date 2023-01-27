@@ -1,6 +1,6 @@
 from celery import Celery
 
-app = Celery('guineapig')
+app = Celery('celeryapp')
 app.config_from_object('config')
 
 if __name__ == '__main__':

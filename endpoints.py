@@ -10,7 +10,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 import services
 import tasks
-from mycelery import app as celery_app
+from celery_app import app as celery_app
 
 app = Flask(__name__)
 CORS(app)
