@@ -1,4 +1,13 @@
 #!/bin/bash
+# PLEASE SPECIFY YOUR AUTH TOKEN AND CITYPYO USER ID BELOW
 
-curl -X POST http://localhost:5002/task -H 'Content-type: application/json' \
-    -d '{"city_pyo_user": "90af2ace6cb38ae1588547c6c20dcb36", "flow_path":"blockToStreet", "roofs":"intensive", "return_period": 100, "model_updates": [ { "outlet_id": "outfall1", "subcatchment_id": "Sub003" } ]}'
+curl --location --request POST 'http://localhost:5001/task' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic WU9VUl9JRDpZT1VSX1BBU1NXT1JE' \
+--data-raw '{
+    "city_pyo_user": "YOUR_CITYPYO_ID",
+     "flowPath":"blockToStreet",
+     "roofs":"intensive",
+     "returnPeriod": 100,
+     "model_updates": [ { "outlet_id": "outfall1", "subcatchment_id": "Sub003" }]
+     }'

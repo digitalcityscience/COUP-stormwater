@@ -5,7 +5,7 @@ from celery import signals
 from celery.utils.log import get_task_logger
 
 from cache import Cache
-from mycelery import app
+from celery_app import app
 from services import calculate_and_return_result, get_cache_key_compute_task, is_valid_md5
 
 

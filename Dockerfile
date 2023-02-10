@@ -1,6 +1,4 @@
-FROM python:3.8
-
-LABEL org.opencontainers.image.authors="vinh-ngu@hotmail.com"
+FROM python:3.11
 
 WORKDIR /app
 COPY . .
